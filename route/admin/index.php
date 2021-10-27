@@ -15,45 +15,43 @@
         <table class="table table-info list-book">
             <thead>
                 <tr>
-                    <th scope="col">Mã phương tiện</th>
-                    <th scope="col">Biển số xe</th>
-                    <th scope="col">Model</th>
-                    <th scope="col">Năm sản xuất</th>
-                    <th scope="col">Kiểu oto</th>
-                    <th scope="col">Giá cho thuê theo ngày</th>
-                    <th scope="col">Giá cho thuê theo tuần</th>
+                    <th scope="col">STT</th>
+                    <th scope="col">Tên sách</th>
+                    <th scope="col">Giá sách</th>
+                    <th scope="col">Tên tác giả</th>
+                    <!-- <th scope="col">Mô tả sách</th> -->
                     <th scope="col">Trạng thái</th>
+                    <th scope="col">Ảnh</th>
                     <th scope="col">Hành động</th>
                     <th scope="col">Hành động</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    $conn = mysqli_connect('localhost','root','','cars');
+                    $conn = mysqli_connect('localhost','root','','database_book');
                     if(!$conn) {
                         die("Không thể kết nối");
                     }
-                    $sql = "SELECT vehicle_id,liscense_no, model, year, ctype, drate, wrate, status FROM tb_cars";
+                    $sql = "SELECT book_id,book_name,book_price, book_author, book_desc, book_status, book_image FROM tb_books";
                     $result = mysqli_query($conn,$sql);
                     
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)) {
-                            if($row["status"] == 0) {
-                                $row["status"] = "Còn trống";
+                            if($row["book_status"] == 0) {
+                                $row["book_status"] = "Đã cung cấp ";
                             } else {
-                                $row["status"] = "Đã đầy";
+                                $row["book_status"] = "Chưa cung cấp";
                             }
                             echo "<tr>";
-                            echo "<th>".$row["vehicle_id"]."</th>";
-                            echo "<th>".$row["liscense_no"]."</th>";
-                            echo "<th>".$row["model"]."</th>";
-                            echo "<th>".$row["year"]."</th>";
-                            echo "<th>".$row["ctype"]."</th>";
-                            echo "<th>".$row["drate"]."</th>";
-                            echo "<th>".$row["wrate"]."</th>";
-                            echo "<th>".$row["status"]."</th>";
-                            echo "<th><a href=src/process-delete.php?id=".$row["vehicle_id"]." class='btn btn-warning'>Delete</a></th>";
-                            echo "<th><a href=src/update.php?idUpdate=".$row["vehicle_id"]." class='btn btn-secondary'>Update</a></th>";
+                            echo "<th>".$row["book_id"]."</th>";
+                            echo "<th>".$row["book_name"]."</th>";
+                            echo "<th>".$row["book_price"]."</th>";
+                            echo "<th>".$row["book_author"]."</th>";
+                            // echo "<th>".$row["book_desc"]."</th>";
+                            echo "<th>".$row["book_status"]."</th>";
+                            echo "<th>".$row["book_image"]."</th>";
+                            echo "<th><a href=src/process-delete.php?id=".$row["book_id"]." class='btn btn-warning'>Delete</a></th>";
+                            echo "<th><a href=src/update.php?idUpdate=".$row["book_id"]." class='btn btn-secondary'>Update</a></th>";
                             echo "</tr>";
                         }
                     }
