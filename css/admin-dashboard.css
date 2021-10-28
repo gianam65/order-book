@@ -7,10 +7,21 @@
 .dashboard-book-img {
     width: 35px;
     height: 35px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .book-container {
     max-height: 500px;
     overflow-y: auto;
+}
+
+.add-book-div {
+    max-width: 500px !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.25);
 }
