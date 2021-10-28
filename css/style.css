@@ -1,3 +1,8 @@
 .global-title {
     margin: 30px auto;
 }
+.global-error {
+    color: tomato;
+    font-weight: 500;
+    font-style: italic;
+}
