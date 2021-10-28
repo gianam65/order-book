@@ -61,7 +61,7 @@
                     <span class="carousel-control-prev-icon" aria-hidden="true">
                     </span>
                     <span class="sr-only">
-                        Previous
+                        Ảnh trước
                     </span>
                 </a>
                 
@@ -70,7 +70,7 @@
 
                     </span>
                     <span class="sr-only">
-                        Next
+                        Ảnh sau
                     </span>
                 </a>
             </div>
@@ -116,109 +116,109 @@
 
             <div class="row align-items-start">
                 <div class="col-3">
-                13 Nguyên tắc nghĩ làm giàu
+                Đừng bao giờ đi ăn một mình
                 </div>
 
                 <div class="col-3">
-                Câu hỏi sống còn
+                Giết con chim nhại
                 </div>
 
                 <div class="col-3">
-                Đi tìm lẽ sống
+                Hai số phận
                 </div>
 
                 <div class="col-3">
-                Đời thay đổi khi ta thay đổi
+                Khác biệt hay là chết
                 </div>
             </div>
 
             <div class="row align-items-center">
                 <div class="col-3">
-                <img src="images/13nguyentaclamgiau.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/dunganmotminh.jpg" alt="images" class="img-responsive img-curve">
                 </div>
 
                 <div class="col-3">
-                <img src="images/cauhoisongcon.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/gietconchimnhai.jpg" alt="images" class="img-responsive img-curve">
                 </div>
 
                 <div class="col-3">
-                <img src="images/ditimlesong.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/haisophan.jpg" alt="images" class="img-responsive img-curve">
                 </div>
 
                 <div class="col-3">
-                <img src="images/doithaydoikhitathaydoi.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/khacbiethaychet.jpg" alt="images" class="img-responsive img-curve">
                 </div>
             </div>
 
             <div class="row align-items-start">
                 <div class="col-3">
-                13 Nguyên tắc nghĩ làm giàu
+                Steve Jobs
                 </div>
 
                 <div class="col-3">
-                Câu hỏi sống còn
+                Trí tuệ do thái
                 </div>
 
                 <div class="col-3">
-                Đi tìm lẽ sống
+                Tư duy lập dị
                 </div>
 
                 <div class="col-3">
-                Đời thay đổi khi ta thay đổi
+                Từ tốt đến vĩ đại
                 </div>
             </div>
 
             <div class="row align-items-center">
                 <div class="col-3">
-                <img src="images/13nguyentaclamgiau.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/stevejobs.jpg" alt="images" class="img-responsive img-curve">
                 </div>
 
                 <div class="col-3">
-                <img src="images/cauhoisongcon.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/trituedothai.jpg" alt="images" class="img-responsive img-curve">
                 </div>
 
                 <div class="col-3">
-                <img src="images/ditimlesong.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/tuduylapdi.jpg" alt="images" class="img-responsive img-curve">
                 </div>
 
                 <div class="col-3">
-                <img src="images/doithaydoikhitathaydoi.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/tutotdenvidai.jpg" alt="images" class="img-responsive img-curve">
                 </div>
             </div>
 
             <div class="row align-items-start">
                 <div class="col-3">
-                13 Nguyên tắc nghĩ làm giàu
+                Vũ trụ trong vỏ hạt dẻ
                 </div>
 
                 <div class="col-3">
-                Câu hỏi sống còn
+                CHo tôi xin một vé đi tuổi thơ
                 </div>
 
                 <div class="col-3">
-                Đi tìm lẽ sống
+                Đắc nhân tâm
                 </div>
 
                 <div class="col-3">
-                Đời thay đổi khi ta thay đổi
+                Nhà giả kim
                 </div>
             </div>
 
             <div class="row align-items-center">
                 <div class="col-3">
-                <img src="images/13nguyentaclamgiau.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/vutrutronghatde.jpg" alt="images" class="img-responsive img-curve">
                 </div>
 
                 <div class="col-3">
-                <img src="images/cauhoisongcon.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/vedituoitho.jpeg" alt="images" class="img-responsive img-curve">
                 </div>
 
                 <div class="col-3">
-                <img src="images/ditimlesong.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/dacnhantam.jpg" alt="images" class="img-responsive img-curve">
                 </div>
 
                 <div class="col-3">
-                <img src="images/doithaydoikhitathaydoi.jpg" alt="images" class="img-responsive img-curve">
+                <img src="images/nhagiakim.jpg" alt="images" class="img-responsive img-curve">
                 </div>
             </div>
         </div>
