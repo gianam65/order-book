@@ -2,7 +2,6 @@
     margin: 30px auto;
 }
 
-<<<<<<< HEAD
 .container{
     width: 80%;
     margin: 0 auto;
@@ -11,7 +10,7 @@
 
 .Search{
     text-align: right;
-=======
+}
 .global-error {
     color: tomato;
     font-weight: 500;
@@ -27,5 +26,4 @@
     color:#fff;
     padding: 20px;
     text-align: center;
->>>>>>> 4076c52dad527d5ab962df7dfc39a53de6555b4b
 }
