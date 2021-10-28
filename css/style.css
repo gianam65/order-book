@@ -28,12 +28,36 @@
     text-align: center;
 }
 
-/* .img-responsive{
-    width: 50%;
-} */
+.search-section {
+    display: flex;
+    align-items: center;
+}
+
+.search-btn {
+    width: 150px;
+    margin-left: 20px;
+}
+
+.home-menu {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book-box {
+    cursor: pointer;
+}
+
+.book-name {
+    text-align: center;
+    margin: 22px 0px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 500;
+}
 
 .img-curve{
-    border-radius: 15px;
+    border-radius: 4px;
     width: 100%;
-    object-fit: contain;
+    height: 300px;
+    object-fit: cover;
 }

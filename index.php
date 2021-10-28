@@ -15,27 +15,23 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="collapse navbar-collapse home-menu" id="navbarTogglerDemo01">
                     <a class="navbar-brand" href="#">TRANG CHỦ</a>
-                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#"><span class="sr-only">ĐĂNG KÍ</span></a>
-                            </li>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><span class="sr-only">ĐĂNG KÍ</span></a>
+                        </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">ĐĂNG NHẬP</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ĐĂNG NHẬP</a>
+                        </li>
+                    </ul>
 
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Về chúng tôi</a>
-                            </li>
-                        </ul>
-
-                    <form class="form-inline my-2 my-lg-0">
+                    <form class="form-inline my-2 my-lg-0 search-section">
                         <input class="form-control mr-sm-2" type="search" placeholder="Nhập tên sách" aria-label="search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                                TÌM KIẾM
-                            </button>
+                        <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">
+                            TÌM KIẾM
+                        </button>
                     </form>
                 </div>
             </div>
@@ -77,149 +73,41 @@
         </div>
 
         <div class="container">
-        <h2 class="text-center">BÁN CHẠY</h2>
+            <h2 class="text-center">Đã cung cấp</h2>
             <div class="row align-items-start">
-                <div class="col-3">
-                13 Nguyên tắc nghĩ làm giàu
-                </div>
-
-                <div class="col-3">
-                Câu hỏi sống còn
-                </div>
-
-                <div class="col-3">
-                Đi tìm lẽ sống
-                </div>
-
-                <div class="col-3">
-                Đời thay đổi khi ta thay đổi
-                </div>
+                <?php
+                    $conn = mysqli_connect('localhost','root','','database_book');
+                    if(!$conn) {
+                        die("Không thể kết nối");
+                    }
+                    $sql = "SELECT book_name,book_price, book_author, book_status, book_image FROM tb_books WHERE book_status = 1";
+                    $result = mysqli_query($conn,$sql);
+                    
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-3 book-name">'.$row["book_name"].'</div>';
+                        }
+                    }
+                ?>
             </div>
 
             <div class="row align-items-center">
-                <div class="col-3">
-                <img src="images/13nguyentaclamgiau.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/cauhoisongcon.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/ditimlesong.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/doithaydoikhitathaydoi.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-            </div>
-
-            <div class="row align-items-start">
-                <div class="col-3">
-                Đừng bao giờ đi ăn một mình
-                </div>
-
-                <div class="col-3">
-                Giết con chim nhại
-                </div>
-
-                <div class="col-3">
-                Hai số phận
-                </div>
-
-                <div class="col-3">
-                Khác biệt hay là chết
-                </div>
-            </div>
-
-            <div class="row align-items-center">
-                <div class="col-3">
-                <img src="images/dunganmotminh.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/gietconchimnhai.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/haisophan.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/khacbiethaychet.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-            </div>
-
-            <div class="row align-items-start">
-                <div class="col-3">
-                Steve Jobs
-                </div>
-
-                <div class="col-3">
-                Trí tuệ do thái
-                </div>
-
-                <div class="col-3">
-                Tư duy lập dị
-                </div>
-
-                <div class="col-3">
-                Từ tốt đến vĩ đại
-                </div>
-            </div>
-
-            <div class="row align-items-center">
-                <div class="col-3">
-                <img src="images/stevejobs.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/trituedothai.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/tuduylapdi.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/tutotdenvidai.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-            </div>
-
-            <div class="row align-items-start">
-                <div class="col-3">
-                Vũ trụ trong vỏ hạt dẻ
-                </div>
-
-                <div class="col-3">
-                CHo tôi xin một vé đi tuổi thơ
-                </div>
-
-                <div class="col-3">
-                Đắc nhân tâm
-                </div>
-
-                <div class="col-3">
-                Nhà giả kim
-                </div>
-            </div>
-
-            <div class="row align-items-center">
-                <div class="col-3">
-                <img src="images/vutrutronghatde.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/vedituoitho.jpeg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/dacnhantam.jpg" alt="images" class="img-responsive img-curve">
-                </div>
-
-                <div class="col-3">
-                <img src="images/nhagiakim.jpg" alt="images" class="img-responsive img-curve">
-                </div>
+                <?php
+                    $conn = mysqli_connect('localhost','root','','database_book');
+                    if(!$conn) {
+                        die("Không thể kết nối");
+                    }
+                    $sql = "SELECT book_image FROM tb_books WHERE book_status = 1";
+                    $result = mysqli_query($conn,$sql);
+                    
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-3 book-box">
+                                <img src='.$row["book_image"].' class="img-responsive img-curve"/>
+                            </div>';
+                        }
+                    }
+                ?>
             </div>
         </div>
 
