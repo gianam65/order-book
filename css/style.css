@@ -28,9 +28,11 @@
     text-align: center;
 }
 
-.img-responsive{
-    width: 100%;
-}
+/* .img-responsive{
+    width: 50%;
+} */
 .img-curve{
     border-radius: 15px;
+    width: 100%;
+    object-fit: contain;
 }
