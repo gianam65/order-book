@@ -114,15 +114,111 @@
                 </div>
             </div>
 
-            <div class="row align-items-end">
-                <div class="col">
-                One of three columns
+            <div class="row align-items-start">
+                <div class="col-3">
+                13 Nguyên tắc nghĩ làm giàu
                 </div>
-                <div class="col">
-                One of three columns
+
+                <div class="col-3">
+                Câu hỏi sống còn
                 </div>
-                <div class="col">
-                One of three columns
+
+                <div class="col-3">
+                Đi tìm lẽ sống
+                </div>
+
+                <div class="col-3">
+                Đời thay đổi khi ta thay đổi
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-3">
+                <img src="images/13nguyentaclamgiau.jpg" alt="images" class="img-responsive img-curve">
+                </div>
+
+                <div class="col-3">
+                <img src="images/cauhoisongcon.jpg" alt="images" class="img-responsive img-curve">
+                </div>
+
+                <div class="col-3">
+                <img src="images/ditimlesong.jpg" alt="images" class="img-responsive img-curve">
+                </div>
+
+                <div class="col-3">
+                <img src="images/doithaydoikhitathaydoi.jpg" alt="images" class="img-responsive img-curve">
+                </div>
+            </div>
+
+            <div class="row align-items-start">
+                <div class="col-3">
+                13 Nguyên tắc nghĩ làm giàu
+                </div>
+
+                <div class="col-3">
+                Câu hỏi sống còn
+                </div>
+
+                <div class="col-3">
+                Đi tìm lẽ sống
+                </div>
+
+                <div class="col-3">
+                Đời thay đổi khi ta thay đổi
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-3">
+                <img src="images/13nguyentaclamgiau.jpg" alt="images" class="img-responsive img-curve">
+                </div>
+
+                <div class="col-3">
+                <img src="images/cauhoisongcon.jpg" alt="images" class="img-responsive img-curve">
+                </div>
+
+                <div class="col-3">
+                <img src="images/ditimlesong.jpg" alt="images" class="img-responsive img-curve">
+                </div>
+
+                <div class="col-3">
+                <img src="images/doithaydoikhitathaydoi.jpg" alt="images" class="img-responsive img-curve">
+                </div>
+            </div>
+
+            <div class="row align-items-start">
+                <div class="col-3">
+                13 Nguyên tắc nghĩ làm giàu
+                </div>
+
+                <div class="col-3">
+                Câu hỏi sống còn
+                </div>
+
+                <div class="col-3">
+                Đi tìm lẽ sống
+                </div>
+
+                <div class="col-3">
+                Đời thay đổi khi ta thay đổi
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-3">
+                <img src="images/13nguyentaclamgiau.jpg" alt="images" class="img-responsive img-curve">
+                </div>
+
+                <div class="col-3">
+                <img src="images/cauhoisongcon.jpg" alt="images" class="img-responsive img-curve">
+                </div>
+
+                <div class="col-3">
+                <img src="images/ditimlesong.jpg" alt="images" class="img-responsive img-curve">
+                </div>
+
+                <div class="col-3">
+                <img src="images/doithaydoikhitathaydoi.jpg" alt="images" class="img-responsive img-curve">
                 </div>
             </div>
         </div>
