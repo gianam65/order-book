@@ -1,3 +1,13 @@
 .global-title {
     margin: 30px auto;
 }
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 1%;
+}
+
+.Search{
+    text-align: right;
+}

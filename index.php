@@ -29,6 +29,7 @@
                                 <a class="nav-link disabled" href="#">Disabled</a>
                             </li>
                         </ul>
+
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
@@ -39,7 +40,41 @@
             </div>
         </nav>
 
-       
+        <div class="container">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="images/mosach.jpg" alt="First slide">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="images/tamlyhoc.png" alt="Second slide">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="images/notfound.png" alt="Third slide">
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true">
+
+                    </span>
+                    <span class="sr-only">
+                        Previous
+                    </span>
+                </a>
+                
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true">
+
+                    </span>
+                    <span class="sr-only">
+                        Next
+                    </span>
+                </a>
+            </div>
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
