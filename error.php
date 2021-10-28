@@ -8,5 +8,5 @@
 </section>
 
 <div class="link-container">
-    <a target="_blank" href="http://localhost:8080/order-book/index.php" class="more-link">Quay về trang chủ</a>
+    <a href="./index.php" class="more-link">Quay về trang chủ</a>
 </div>
