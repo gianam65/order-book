@@ -11,7 +11,7 @@
   <body>
     <div class="container">
         <h3 class="global-title">Admin book manager</h3>
-        <a href="src/addcar.php" class="btn btn-success add-car-btn">Add book</a>
+        <a href="../.././src/process-add.php" class="btn btn-success add-car-btn">Add book</a>
         <table class="table table-info list-book">
             <thead>
                 <tr>
@@ -19,7 +19,6 @@
                     <th scope="col">Tên sách</th>
                     <th scope="col">Giá sách</th>
                     <th scope="col">Tên tác giả</th>
-                    <!-- <th scope="col">Mô tả sách</th> -->
                     <th scope="col">Trạng thái</th>
                     <th scope="col">Ảnh</th>
                     <th scope="col">Hành động</th>
@@ -32,7 +31,7 @@
                     if(!$conn) {
                         die("Không thể kết nối");
                     }
-                    $sql = "SELECT book_id,book_name,book_price, book_author, book_desc, book_status, book_image FROM tb_books";
+                    $sql = "SELECT book_id,book_name,book_price, book_author, book_status, book_image FROM tb_books";
                     $result = mysqli_query($conn,$sql);
                     
                     if(mysqli_num_rows($result) > 0){
@@ -43,15 +42,16 @@
                                 $row["book_status"] = "Chưa cung cấp";
                             }
                             echo "<tr>";
-                            echo "<th>".$row["book_id"]."</th>";
-                            echo "<th>".$row["book_name"]."</th>";
-                            echo "<th>".$row["book_price"]."</th>";
-                            echo "<th>".$row["book_author"]."</th>";
-                            // echo "<th>".$row["book_desc"]."</th>";
-                            echo "<th>".$row["book_status"]."</th>";
-                            echo "<th>".$row["book_image"]."</th>";
-                            echo "<th><a href=src/process-delete.php?id=".$row["book_id"]." class='btn btn-warning'>Delete</a></th>";
-                            echo "<th><a href=src/update.php?idUpdate=".$row["book_id"]." class='btn btn-secondary'>Update</a></th>";
+                                echo "<th>".$row["book_id"]."</th>";
+                                echo "<th>".$row["book_name"]."</th>";
+                                echo "<th>".$row["book_price"]."</th>";
+                                echo "<th>".$row["book_author"]."</th>";
+                                echo "<th>".$row["book_status"]."</th>";
+                                echo "<th>
+                                    <img class=dashboard-book-img src=$row[book_image] />
+                                </th>";
+                                echo "<th><a href=../.././src/process-delete.php?id=".$row["book_id"]." class='btn btn-warning'>Delete</a></th>";
+                                echo "<th><a href=src/update.php?idUpdate=".$row["book_id"]." class='btn btn-secondary'>Update</a></th>";
                             echo "</tr>";
                         }
                     }
