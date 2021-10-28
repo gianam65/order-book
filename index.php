@@ -18,22 +18,22 @@
                     <a class="navbar-brand" href="#">TRANG CHỦ</a>
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="#"><span class="sr-only">ĐĂNG KÍ</span></a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="#">ĐĂNG NHẬP</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Disabled</a>
+                                <a class="nav-link disabled" href="#">Về chúng tôi</a>
                             </li>
                         </ul>
 
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Nhập tên sách" aria-label="search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                                Search
+                                TÌM KIẾM
                             </button>
                     </form>
                 </div>
@@ -58,7 +58,6 @@
 
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true">
-
                     </span>
                     <span class="sr-only">
                         Previous
@@ -76,6 +75,52 @@
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-3">
+                13 Nguyên tắc nghĩ làm giàu
+                </div>
+
+                <div class="col-3">
+                Câu hỏi sống còn
+                </div>
+
+                <div class="col-3">
+                Đi tìm lẽ sống
+                </div>
+
+                <div class="col-3">
+                Đời thay đổi khi ta thay đổi
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col">
+                <img src="images/13nguyentaclamgiau.jpg" class="img-responsive img-curve">
+                </div>
+                <div class="col">
+                One of three columns
+                </div>
+                <div class="col">
+                One of three columns
+                </div>
+            </div>
+
+            <div class="row align-items-end">
+                <div class="col">
+                One of three columns
+                </div>
+                <div class="col">
+                One of three columns
+                </div>
+                <div class="col">
+                One of three columns
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>

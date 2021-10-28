@@ -27,3 +27,10 @@
     padding: 20px;
     text-align: center;
 }
+
+.img-responsive{
+    width: 100%;
+}
+.img-curve{
+    border-radius: 15px;
+}
