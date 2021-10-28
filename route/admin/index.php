@@ -54,8 +54,8 @@
                                     echo "<th>
                                         <img class=dashboard-book-img src=$row[book_image] />
                                     </th>";
-                                    echo "<th><a href=../.././src/process-delete.php?id=".$row["book_id"]." class='btn btn-warning'>Delete</a></th>";
-                                    echo "<th><a href=src/update.php?idUpdate=".$row["book_id"]." class='btn btn-secondary'>Update</a></th>";
+                                    echo "<th><a href=../.././src/process-delete.php?id=".$row["book_id"]." class='btn btn-danger'>Delete</a></th>";
+                                    echo "<th><a href=src/update.php?idUpdate=".$row["book_id"]." class='btn btn-warning'>Update</a></th>";
                                 echo "</tr>";
                             }
                         }
