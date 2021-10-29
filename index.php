@@ -9,7 +9,7 @@
 </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light home-nav">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -39,35 +39,34 @@
 
         <div class="container">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
+                <div class="carousel-inner slide-box">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="images/mosach.jpg" alt="First slide">
+                        <img class="d-block w-100 slide-img" src="images/slide1.jpg" alt="First slide">
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="images/tamlyhoc.png" alt="Second slide">
+                        <img class="d-block w-100 slide-img" src="images/slide2.jpg" alt="Second slide">
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="images/notfound.png" alt="Third slide">
+                        <img class="d-block w-100 slide-img" src="images/slide3.jpg" alt="Thirst slide">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="d-block w-100 slide-img" src="images/slide4.jpg" alt="Four slide">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="d-block w-100 slide-img" src="images/slide5.jpg" alt="Five slide">
                     </div>
                 </div>
 
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true">
-                    </span>
-                    <span class="sr-only">
-                        Ảnh trước
-                    </span>
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 </a>
                 
                 <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true">
-
-                    </span>
-                    <span class="sr-only">
-                        Ảnh sau
-                    </span>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 </a>
             </div>
         </div>
