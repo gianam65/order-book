@@ -9,16 +9,39 @@
     <link rel="stylesheet" href="../.././css/style.css">
   </head>
   <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light home-nav">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse home-menu" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="#">TRANG CHỦ</a>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><span class="sr-only">ĐĂNG KÍ</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ĐĂNG NHẬP</a>
+                        </li>
+                    </ul>
+
+                    <form class="form-inline my-2 my-lg-0 search-section">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Nhập tên sách" aria-label="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">
+                            TÌM KIẾM
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
   <?php
 session_start();
 
 ?>
 
-<?php include "includes/header.php" ?>
-<?php 
-//Gọi file connection.php ở bài trước
-require_once("includes/connection.php");
-	// Kiểm tra nếu người dùng đã ân nút đăng nhập thì mới xử lý
+	<?php 
 if (isset($_POST["btn_submit"])) {
 	// lấy thông tin người dùng
 	$username = $_POST["username"];
@@ -32,7 +55,11 @@ if (isset($_POST["btn_submit"])) {
 	if ($username == "" || $password =="") {
 		echo "username hoặc password bạn không được để trống!";
 	}else{
-		$sql = "select * from users where username = '$username' and password = '$password' ";
+		$conn = mysqli_connect('localhost','root','','database_book');
+        if(!$conn){
+            die('Không thể kết nối');
+        }
+		$sql = "select * from tb_users where user_name = '$username' and user_pass = '$password' ";
 		$query = mysqli_query($conn,$sql);
 		$num_rows = mysqli_num_rows($query);
 		if ($num_rows==0) {
@@ -50,7 +77,7 @@ if (isset($_POST["btn_submit"])) {
 			
                 // Thực thi hành động sau khi lưu thông tin vào session
                 // ở đây mình tiến hành chuyển hướng trang web tới một trang gọi là index.php
-			header('Location: index.php');
+			header('Location: ../.././index.php');
 		}
 	}
 }
@@ -73,4 +100,3 @@ if (isset($_POST["btn_submit"])) {
 	    	</table>
   </fieldset>
   </form>
-<?php include "includes/footer.php" ?>
