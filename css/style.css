@@ -27,3 +27,83 @@
     padding: 20px;
     text-align: center;
 }
+
+<<<<<<< HEAD
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: #e9d8f4;
+  }
+  
+  /* Header/Blog Title */
+  .header {
+    padding: 10px;
+    text-align: center;
+    background: #0a6f3c;
+    color: #fff;
+  }
+  
+  .header h1 {
+    font-size: 40px;
+  }
+  
+  .header p {
+    font-size: 20px;
+  }
+  
+  /* Style the top navigation bar */
+  .topnav {
+    overflow: hidden;
+    background-color: #58257b;
+  }
+  
+  /* Định dạng link điều hướng */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Thay đổi màu liên kết khi di chuột qua */
+  .topnav a:hover {
+    background-color: #db7093;
+    color: white;
+  }
+=======
+.search-section {
+    display: flex;
+    align-items: center;
+}
+
+.search-btn {
+    width: 150px;
+    margin-left: 20px;
+}
+
+.home-menu {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book-box {
+    cursor: pointer;
+}
+
+.book-name {
+    text-align: center;
+    margin: 22px 0px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.img-curve{
+    border-radius: 4px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+>>>>>>> c47d3387b88df3a3de2b2502a35368be77308e7b

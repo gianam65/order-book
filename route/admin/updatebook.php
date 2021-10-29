@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Add books section</title>
+    <title>Update books section</title>
     <link rel="stylesheet" href="../.././css/style.css">
     <link rel="stylesheet" href="../.././css/admin-dashboard.css">
   </head>
   <body>
     <div class="wrapper">
         <div class="container add-book-div">
-            <h3 class="global-title">Admin add books section</h3>
+            <h3 class="global-title">Admin update books section</h3>
             <span class="global-error">Lưu ý: Phải điền tất cả thông tin sách vào chỗ trống</span>
-            <form action="../.././src/process-add.php" method="POST">
+            <form action="../.././src/process-update.php" method="POST">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Tên sách</label>
                     <input type="text" class="form-control" name='bookName'>
@@ -43,7 +43,7 @@
                         <option value="1">Đã cung cấp</option>
                     </select>
                 </div>
-                <button class='btn btn-success btn-add-car' name='addBook'>Click to add</button>
+                <button class='btn btn-success btn-add-car' name='updateBook'>Click to save update</button>
             </form>
         </div>
     </div>
