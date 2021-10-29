@@ -76,17 +76,14 @@
             <div class="row align-items-start">
                 <?php
                     $conn = mysqli_connect('localhost','root','','database_book');
-                    if(!$conn) 
-                    {
+                    if(!$conn) {
                         die("Không thể kết nối");
                     }
                     $sql = "SELECT book_name,book_price, book_author, book_status, book_image FROM tb_books WHERE book_status = 1";
                     $result = mysqli_query($conn,$sql);
                     
-                    if(mysqli_num_rows($result) > 0)
-                    {
-                        while($row = mysqli_fetch_assoc($result))
-                        {
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)) {
                             echo '<div class="col-3 book-name">'.$row["book_name"].'</div>';
                         }
                     }
@@ -96,17 +93,14 @@
             <div class="row align-items-center">
                 <?php
                     $conn = mysqli_connect('localhost','root','','database_book');
-                    if(!$conn)
-                    {
+                    if(!$conn) {
                         die("Không thể kết nối");
                     }
                     $sql = "SELECT book_image FROM tb_books WHERE book_status = 1";
                     $result = mysqli_query($conn,$sql);
                     
-                    if(mysqli_num_rows($result) > 0)
-                    {
-                        while($row = mysqli_fetch_assoc($result))
-                        {
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)) {
                             echo '<div class="col-3 book-box">
                                 <img src='.$row["book_image"].' class="img-responsive img-curve"/>
                             </div>';
