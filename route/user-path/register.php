@@ -9,27 +9,33 @@
     <link rel="stylesheet" href="../.././css/style.css">
   </head>
   <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light home-nav">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="collapse navbar-collapse home-menu" id="navbarTogglerDemo01">
                     <a class="navbar-brand" href="#">TRANG CHỦ</a>
-                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
-                            </li>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><span class="sr-only">ĐĂNG KÍ</span></a>
+                        </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ĐĂNG NHẬP</a>
+                        </li>
+                    </ul>
 
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Disabled</a>
-                            </li>
-                        </ul>
+                    <form class="form-inline my-2 my-lg-0 search-section">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Nhập tên sách" aria-label="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">
+                            TÌM KIẾM
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
     
                         <form action="register.php" method="post">
 		<table>
