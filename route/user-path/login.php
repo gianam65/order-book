@@ -55,7 +55,7 @@ if (isset($_POST["btn_submit"])) {
 	}
 }
 ?>
-	<form method="POST" action="dang-nhap.php">
+	<form method="POST" action="login.php">
 	<fieldset>
 	    <legend>Đăng nhập</legend>
 	    	<table>
