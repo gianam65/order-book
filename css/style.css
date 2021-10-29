@@ -64,6 +64,15 @@
 
 .slide-img {
     width: 100%;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 135px);
     object-fit: cover;
+}
+
+.home-nav {
+    padding: 0;
+    /* background: #2ecc71 !important; */
+}
+
+.slide-box {
+    border-radius: 5px;
 }
