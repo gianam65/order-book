@@ -69,7 +69,7 @@
                         Ảnh sau
                     </span>
                 </a>
-            </div>
+            </div>   
         </div>
 
         <div class="container">
