@@ -27,52 +27,37 @@
     padding: 20px;
     text-align: center;
 }
-
 .search-section {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .search-btn {
-    width: 150px;
-    margin-left: 20px;
+  width: 150px;
+  margin-left: 20px;
 }
 
 .home-menu {
-    align-items: center;
-    justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .book-box {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .book-name {
-    text-align: center;
-    margin: 22px 0px;
-    margin-bottom: 5px;
-    font-size: 20px;
-    font-weight: 500;
+  text-align: center;
+  margin: 22px 0px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .img-curve{
-    border-radius: 4px;
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+  border-radius: 4px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
-.slide-img {
-    width: 100%;
-    height: calc(100vh - 135px);
-    object-fit: cover;
-}
-
-.home-nav {
-    padding: 0;
-    /* background: #2ecc71 !important; */
-}
-
-.slide-box {
-    border-radius: 5px;
-}
