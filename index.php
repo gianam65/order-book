@@ -110,49 +110,6 @@
             </div>
         </div>
 
-        <div class="container">
-            <h2 class="text-center">Chưa cung cấp</h2>
-            <div class="row align-items-start">
-                <?php
-                    $conn = mysqli_connect('localhost','root','','database_book');
-                    if(!$conn) {
-                        die("Không thể kết nối");
-                    }
-                    $sql = "SELECT book_name,book_price, book_author, book_status, book_image FROM tb_books WHERE book_status = 0";
-                    $result = mysqli_query($conn,$sql);
-                    
-                    if(mysqli_num_rows($result) > 0){
-                        while($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-3 book-name">'.$row["book_name"].'</div>';
-                        }
-                    }
-                ?>
-            </div>
-
-            <div class="row align-items-center">
-                <?php
-                    $conn = mysqli_connect('localhost','root','','database_book');
-                    if(!$conn) {
-                        die("Không thể kết nối");
-                    }
-                    $sql = "SELECT book_image FROM tb_books WHERE book_status = 0";
-                    $result = mysqli_query($conn,$sql);
-                    
-                    if(mysqli_num_rows($result) > 0){
-                        while($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-3 book-box">
-                                <img src='.$row["book_image"].' class="img-responsive img-curve"/>
-                            </div>';
-                        }
-                    } else {
-                        echo '<div class="no-book-show">
-                        
-                        </div>'
-                    }
-                ?>
-            </div>
-        </div>
-
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
