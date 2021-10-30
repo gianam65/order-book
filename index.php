@@ -16,20 +16,20 @@
                 </button>
 
                 <div class="collapse navbar-collapse home-menu" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="#">TRANG CHỦ</a>
+                    <a class="navbar-brand home-link" href="#">TRANG CHỦ</a>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#"><span class="sr-only">ĐĂNG KÍ</span></a>
+                            <a class="nav-link home-link" href="#"><span class="sr-only">ĐĂNG KÍ</span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">ĐĂNG NHẬP</a>
+                            <a class="nav-link home-link" href="#">ĐĂNG NHẬP</a>
                         </li>
                     </ul>
 
                     <form class="form-inline my-2 my-lg-0 search-section">
                         <input class="form-control mr-sm-2" type="search" placeholder="Nhập tên sách" aria-label="search">
-                        <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">
+                        <button class="btn my-2 my-sm-0 search-btn" type="submit">
                             TÌM KIẾM
                         </button>
                     </form>
@@ -72,7 +72,7 @@
         </div>
 
         <div class="container">
-            <h2 class="text-center">Đã cung cấp</h2>
+            <h2 class="text-center">Đã phát hành</h2>
             <div class="row align-items-start">
                 <?php
                     $conn = mysqli_connect('localhost','root','','database_book');
@@ -105,6 +105,63 @@
                                 <img src='.$row["book_image"].' class="img-responsive img-curve"/>
                             </div>';
                         }
+                    } else {
+                        echo '<div class="container no-data-show">
+                            <img src="./images/no-book-show.png" />
+                            <p class="no-data-text">
+                                Xin trân trọng cảm ơn Quý khách hàng đã tin tưởng sử dụng sản phẩm từ chúng tôi. Thời gian qua chúng tôi đã nhận được rất nhiều đơn đặt sách từ quý khách, tuy nhiên số lượng hàng về không kịp so với thời gian so với thời gian.
+                                Vì vậy, hiện nay các loại sách chưa được phát hành đã hết.
+                                Chúng tôi thành thật xin lỗi vì những bất tiện nêu trên và trong thời gian tới chúng tôi sẽ cố gắng để đáp ứng tốt hơn những yêu cầu của Quý khách.
+                            </p>
+                        </div>';
+                    }
+                ?>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="text-center">Chưa phát hành</h2>
+            <div class="row align-items-start">
+                <?php
+                    $conn = mysqli_connect('localhost','root','','database_book');
+                    if(!$conn) {
+                        die("Không thể kết nối");
+                    }
+                    $sql = "SELECT book_name,book_price, book_author, book_status, book_image FROM tb_books WHERE book_status = 0";
+                    $result = mysqli_query($conn,$sql);
+                    
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-3 book-name">'.$row["book_name"].'</div>';
+                        }
+                    } 
+                ?>
+            </div>
+
+            <div class="row align-items-center">
+                <?php
+                    $conn = mysqli_connect('localhost','root','','database_book');
+                    if(!$conn) {
+                        die("Không thể kết nối");
+                    }
+                    $sql = "SELECT book_image FROM tb_books WHERE book_status = 0";
+                    $result = mysqli_query($conn,$sql);
+                    
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-3 book-box">
+                                <img src='.$row["book_image"].' class="img-responsive img-curve"/>
+                            </div>';
+                        }
+                    } else {
+                        echo '<div class="container no-data-show">
+                            <p class="no-data-text">
+                                Xin trân trọng cảm ơn Quý khách hàng đã tin tưởng sử dụng sản phẩm từ chúng tôi. Thời gian qua chúng tôi đã nhận được rất nhiều đơn đặt sách từ quý khách, tuy nhiên số lượng hàng về không kịp so với thời gian so với thời gian.
+                                Vì vậy, hiện nay các loại sách chưa được phát hành đã hết.
+                                Chúng tôi thành thật xin lỗi vì những bất tiện nêu trên và trong thời gian tới chúng tôi sẽ cố gắng để đáp ứng tốt hơn những yêu cầu của Quý khách.
+                            </p>
+                            <img src="./images/no-book-show.png" />
+                        </div>';
                     }
                 ?>
             </div>

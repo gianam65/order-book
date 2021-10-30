@@ -35,6 +35,14 @@
 .search-btn {
   width: 150px;
   margin-left: 20px;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.search-btn:hover {
+  background: #fff;
+  color: #000;
+  border: transparent;
 }
 
 .home-menu {
@@ -61,3 +69,41 @@
   object-fit: cover;
 }
 
+.slide-img {
+  width: 100%;
+  height: calc(100vh - 135px);
+  object-fit: cover;
+}
+
+.home-nav {
+  padding: 0;
+  background: #6C63FF !important;
+}
+
+.home-link {
+  color: #fff !important;
+}
+
+.slide-box {
+  border-radius: 5px;
+} 
+
+.no-data-text {
+  text-align: center;
+  font-size: 20px;
+  color: #6C63FF;
+}
+
+.no-data-show {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.no-data-text {
+  width: 35%;
+}
+
+.no-data-show img {
+  width: 65%;
+}
