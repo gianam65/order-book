@@ -25,7 +25,7 @@
         }
         $result = mysqli_query($conn,$sql);
         if($result > 0){
-            header("Location: .././route/admin/index.php");
+            header("Location: .././route/manager/index.php");
         }else{
             header("Location: .././error.php");
         }
