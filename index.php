@@ -41,23 +41,23 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner slide-box">
                     <div class="carousel-item active">
-                        <img class="d-block w-100 slide-img" src="images/slide1.jpg" alt="First slide">
+                        <img class="d-block w-100 slide-img" src="./src/images/slide1.jpg" alt="First slide">
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block w-100 slide-img" src="images/slide2.jpg" alt="Second slide">
+                        <img class="d-block w-100 slide-img" src="./src/images/slide2.jpg" alt="Second slide">
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block w-100 slide-img" src="images/slide3.jpg" alt="Thirst slide">
+                        <img class="d-block w-100 slide-img" src="./src/images/slide3.jpg" alt="Thirst slide">
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block w-100 slide-img" src="images/slide4.jpg" alt="Four slide">
+                        <img class="d-block w-100 slide-img" src="./src/images/slide4.jpg" alt="Four slide">
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block w-100 slide-img" src="images/slide5.jpg" alt="Five slide">
+                        <img class="d-block w-100 slide-img" src="./src/images/slide5.jpg" alt="Five slide">
                     </div>
                 </div>
 
@@ -102,12 +102,12 @@
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)) {
                             echo '<div class="col-3 book-box">
-                                <img src='.$row["book_image"].' class="img-responsive img-curve"/>
+                                <img src=./src/images/'.$row["book_image"].' class="img-responsive img-curve"/>
                             </div>';
                         }
                     } else {
                         echo '<div class="container no-data-show">
-                            <img src="./images/no-book-show.png" />
+                            <img src="./src/images/no-book-show.png" />
                             <p class="no-data-text">
                                 Xin trân trọng cảm ơn Quý khách hàng đã tin tưởng sử dụng sản phẩm từ chúng tôi. Thời gian qua chúng tôi đã nhận được rất nhiều đơn đặt sách từ quý khách, tuy nhiên số lượng hàng về không kịp so với thời gian so với thời gian.
                                 Vì vậy, hiện nay các loại sách chưa được phát hành đã hết.
@@ -150,7 +150,7 @@
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)) {
                             echo '<div class="col-3 book-box">
-                                <img src='.$row["book_image"].' class="img-responsive img-curve"/>
+                                <img src=.src/images/'.$row["book_image"].' class="img-responsive img-curve"/>
                             </div>';
                         }
                     } else {
@@ -160,7 +160,7 @@
                                 Vì vậy, hiện nay các loại sách chưa được phát hành đã hết.
                                 Chúng tôi thành thật xin lỗi vì những bất tiện nêu trên và trong thời gian tới chúng tôi sẽ cố gắng để đáp ứng tốt hơn những yêu cầu của Quý khách.
                             </p>
-                            <img src="./images/no-book-show.png" />
+                            <img src="./src/images/no-book-show.png" />
                         </div>';
                     }
                 ?>

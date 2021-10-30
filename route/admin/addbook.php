@@ -13,7 +13,7 @@
         <div class="container add-book-div">
             <h3 class="global-title">Admin add books section</h3>
             <span class="global-error">Lưu ý: Phải điền tất cả thông tin sách vào chỗ trống</span>
-            <form action="../.././src/process-add.php" method="POST">
+            <form action="../.././src/process-add.php" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Tên sách</label>
                     <input type="text" class="form-control" name='bookName'>
@@ -32,9 +32,10 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Hình ảnh sách
-                        <span class='global-error'>(Lưu ý: Chỉ cần paste địa chỉ hình ảnh (Ví Dụ: https://www.vinabook.com/images/thumbnails/product/...))</span>
-                    </label>
-                    <input type="text" class="form-control" name='bookImage'>
+                        <!-- <span class='global-error'>(Lưu ý: Chỉ cần paste địa chỉ hình ảnh (Ví Dụ: https://www.vinabook.com/images/thumbnails/product/...))</span> -->
+                    </label><br>
+                    <!-- <input type="text" class="form-control" name='bookImage'> -->
+                    <input type="File" name="bookImage">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Trạng thái</label>
