@@ -52,7 +52,7 @@
                                     echo "<th>".$row["book_author"]."</th>";
                                     echo "<th>".$row["book_status"]."</th>";
                                     echo "<th>
-                                        <img class=dashboard-book-img src=$row[book_image] />
+                                        <img class=dashboard-book-img src=../.././src/images/$row[book_image] />
                                     </th>";
                                     echo "<th><a href=../.././src/process-delete.php?id=".$row["book_id"]." class='btn btn-danger'>Delete</a></th>";
                                     echo "<th><a href=updatebook.php?update=".$row["book_id"]." class='btn btn-warning' >Update</a></th>";

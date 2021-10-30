@@ -150,7 +150,7 @@
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)) {
                             echo '<div class="col-3 book-box">
-                                <img src=.src/images/'.$row["book_image"].' class="img-responsive img-curve"/>
+                                <img src=./src/images/'.$row["book_image"].' class="img-responsive img-curve"/>
                             </div>';
                         }
                     } else {
