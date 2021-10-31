@@ -229,6 +229,9 @@
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  margin-top: 20px;
+  border-top: 1px solid #d9d9d9;
+  padding-top: 15px;
 }
 
 .book-item {
@@ -265,7 +268,37 @@
   align-items: center;
 }
 
+.book-detail {
+  display: flex;
+  width: 100%;
+  margin-top: 35px;
+  border-top: 1px solid #d9d9d9;
+  padding-top: 30px;
+}
+
+.book-detail img {
+  width: 65%;
+  height: 500px;
+  object-fit: contain;
+}
+
+.detail-infor {
+  width: 35%;
+}
+
+.add-to-cart {
+  background: #6C63FF;
+  color: #fff;
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 768px) {
+  .book-item {
+    width: calc(100% / 2 - 20px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
   .book-item {
     width: calc(100% / 2 - 20px);
   }
