@@ -18,11 +18,14 @@
                     <a class="navbar-brand home-link" href="#">TRANG CHỦ</a>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link home-link" href="#"><span class="sr-only">ĐĂNG KÍ</span></a>
+                            <a class="nav-link home-link" href="#"><span class="sr-only">Đăng kí</span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link home-link" href="#">ĐĂNG NHẬP</a>
+                            <a class="nav-link home-link" href="#">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link home-link" href="./route/global/not-active.php">Chưa phát hành</a>
                         </li>
                     </ul>
 
@@ -70,48 +73,35 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container book-activated">
             <h2 class="text-center">Đã phát hành</h2>
-            <div class="row align-items-start">
+            <div class="list-book-show">
                 <?php
                     $conn = mysqli_connect('localhost','root','','database_book');
                     if(!$conn) {
                         die("Không thể kết nối");
                     }
-                    $sql = "SELECT book_name,book_price, book_author, book_status, book_image FROM tb_books WHERE book_status = 1";
+                    $sql = "SELECT book_image, book_name, book_price, book_desc FROM tb_books WHERE book_status = 1";
                     $result = mysqli_query($conn,$sql);
                     
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-3 book-name">'.$row["book_name"].'</div>';
-                        }
-                    }
-                ?>
-            </div>
-
-            <div class="row align-items-center">
-                <?php
-                    $conn = mysqli_connect('localhost','root','','database_book');
-                    if(!$conn) {
-                        die("Không thể kết nối");
-                    }
-                    $sql = "SELECT book_image FROM tb_books WHERE book_status = 1";
-                    $result = mysqli_query($conn,$sql);
-                    
-                    if(mysqli_num_rows($result) > 0){
-                        while($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-3 book-box">
-                                <img src=./src/images/'.$row["book_image"].' class="img-responsive img-curve"/>
+                        echo '<div class="book-item">
+                                <img src=./src/images/'.$row["book_image"].' alt="">
+                                <h3 class="book-name global-color">Tên sách: '.$row["book_name"].'</h3>
+                                <p class="book-price">Giá sách: '.$row["book_price"].'</p>
+                                <span class="book-desc">Mô tả: '.$row["book_desc"].'</span>
+                                <div class="box-wrapper"><a href="#" class="book-more">Xem chi tiết sản phẩm</a></div>
                             </div>';
                         }
                     } else {
                         echo '<div class="container no-data-show">
-                            <img src="./src/images/no-book-show.png" />
                             <p class="no-data-text">
                                 Xin trân trọng cảm ơn Quý khách hàng đã tin tưởng sử dụng sản phẩm từ chúng tôi. Thời gian qua chúng tôi đã nhận được rất nhiều đơn đặt sách từ quý khách, tuy nhiên số lượng hàng về không kịp so với thời gian so với thời gian.
                                 Vì vậy, hiện nay các loại sách chưa được phát hành đã hết.
                                 Chúng tôi thành thật xin lỗi vì những bất tiện nêu trên và trong thời gian tới chúng tôi sẽ cố gắng để đáp ứng tốt hơn những yêu cầu của Quý khách.
                             </p>
+                            <img src="./src/images/no-book-show.png" />
                         </div>';
                     }
                 ?>
@@ -120,36 +110,23 @@
 
         <div class="container">
             <h2 class="text-center">Chưa phát hành</h2>
-            <div class="row align-items-start">
+            <div class="list-book-show">
                 <?php
                     $conn = mysqli_connect('localhost','root','','database_book');
                     if(!$conn) {
                         die("Không thể kết nối");
                     }
-                    $sql = "SELECT book_name,book_price, book_author, book_status, book_image FROM tb_books WHERE book_status = 0";
+                    $sql = "SELECT book_image, book_name, book_price, book_desc FROM tb_books WHERE book_status = 0";
                     $result = mysqli_query($conn,$sql);
                     
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-3 book-name">'.$row["book_name"].'</div>';
-                        }
-                    } 
-                ?>
-            </div>
-
-            <div class="row align-items-center">
-                <?php
-                    $conn = mysqli_connect('localhost','root','','database_book');
-                    if(!$conn) {
-                        die("Không thể kết nối");
-                    }
-                    $sql = "SELECT book_image FROM tb_books WHERE book_status = 0";
-                    $result = mysqli_query($conn,$sql);
-                    
-                    if(mysqli_num_rows($result) > 0){
-                        while($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-3 book-box">
-                                <img src=./src/images/'.$row["book_image"].' class="img-responsive img-curve"/>
+                        echo '<div class="book-item">
+                                <img src=./src/images/'.$row["book_image"].' alt="">
+                                <h3 class="book-name global-color">'.$row["book_name"].'</h3>
+                                <p class="book-price">'.$row["book_price"].'</p>
+                                <span class="book-desc">'.$row["book_desc"].'</span>
+                                <div class="box-wrapper"><a href="#" class="book-more">Xem chi tiết sản phẩm</a></div>
                             </div>';
                         }
                     } else {
@@ -163,6 +140,28 @@
                         </div>';
                     }
                 ?>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3 class="global-color text-center">Câu chuyện từ những cuốn sách</h3>
+            <div class="book-story">
+                <img src="https://images.pexels.com/photos/8239819/pexels-photo-8239819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <p class="book-article">
+                    Tỷ phú Warren Buffett cũng là người rất mê đọc sách, ông chia sẻ "tôi chỉ ngồi văn phòng và đọc suốt ngày" – ông chỉ vào những trang sách và hàng đống giấy tờ: "đọc 500 trang như thế mỗi ngày là cách để tích lũy kiến thức, bồi dưỡng sự thông minh".
+                    <br>
+                    Thế nhưng chúng ta cũng không mang định kiến rằng đọc sách chỉ là đọc những trang sách, trang tài liệu, bởi thời đại công nghệ hiện nay, sách, hay tài liệu nó rất đa dạng, nó cũng có thể là những trang sách, trang báo giấy, sách điện tử, thậm chí là những trang "sách hình" thông qua những bộ phim về khoa học kỹ thuật, nghiên cứu, hay thậm chí những người bên cạnh ta cũng có thể là những "cuốn sách di động". Đọc sách nào không quan trọng, quan trọng là cách chúng ta đọc sách để tích lũy kiến thức.
+                </p>    
+            </div>
+
+            <h3 class="global-color text-center">Bài học từ người xuất chúng</h3>
+            <div class="book-story">
+                <p class="book-article">
+                    Tỷ phú Jack Ma cho rằng "con người chính là một cuốn sách rất đáng để đọc, tôi thấy rằng công ty của chúng tôi có 24 ngàn nhân viên, họ chính là 24 ngàn cuốn sách với những nội dung hoàn toàn khác nhau. Trải nghiệm sống và cách giải quyết vấn đề của mỗi người trong số họ đều nằm ngoài sự suy đoán của tôi".
+                    <br>
+                    Cũng như cậu bé dùng giỏ than xách nước, việc đọc sách không thể thấy ngay kết quả, thậm chí bạn còn không nhận ra những thay đổi, những kết quả đạt được, tuy nhiên nó sẽ dần thấm sau vào trí thức của bạn, như những giọt nước đã ăn sâu, cuốn trôi hết bụi bẩn trên chiếc giỏ kia một cách từ từ chậm rãi mà chính bạn không thể nhận ra.
+                </p>
+                <img src="https://images.pexels.com/photos/3563625/pexels-photo-3563625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
             </div>
         </div>
 
