@@ -31,10 +31,7 @@
                     <input type="text" class="form-control" name='bookDesc'>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Hình ảnh sách
-                        <!-- <span class='global-error'>(Lưu ý: Chỉ cần paste địa chỉ hình ảnh (Ví Dụ: https://www.vinabook.com/images/thumbnails/product/...))</span> -->
-                    </label><br>
-                    <!-- <input type="text" class="form-control" name='bookImage'> -->
+                    <label for="exampleFormControlInput1" class="form-label">Hình ảnh sách</label><br>
                     <input type="File" name="bookImage">
                 </div>
                 <div class="mb-3">
