@@ -26,8 +26,8 @@
                         </li>
                     </ul>
 
-                    <form class="form-inline my-2 my-lg-0 search-section">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Nhập tên sách" aria-label="search">
+                    <form class="form-inline my-2 my-lg-0 search-section" action="./route/global/search-result.php" method="POST">
+                        <input class="form-control mr-sm-2" name="search-value" id="search-value" type="search" placeholder="Nhập tên sách" aria-label="search">
                         <button class="btn my-2 my-sm-0 search-btn" id="search-feature" type="submit">
                             TÌM KIẾM
                         </button>
