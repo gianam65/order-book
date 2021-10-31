@@ -81,7 +81,7 @@
                     if(!$conn) {
                         die("Không thể kết nối");
                     }
-                    $sql = "SELECT book_image, book_name, book_author ,book_price, book_desc FROM tb_books WHERE book_status = 1";
+                    $sql = "SELECT book_id, book_image, book_name, book_author ,book_price, book_desc FROM tb_books WHERE book_status = 1";
                     $result = mysqli_query($conn,$sql);
                     
                     if(mysqli_num_rows($result) > 0){
@@ -92,7 +92,7 @@
                                 <p class="book-price">Giá sách: '.$row["book_price"].'</p>
                                 <p class="book-price">Tác giả: '.$row["book_author"].'</p>
                                 <span class="book-desc">Mô tả: '.$row["book_desc"].'</span>
-                                <div class="box-wrapper"><a href="#" class="book-more">Xem chi tiết sản phẩm</a></div>
+                                <div class="box-wrapper"><a href="./route/global/detail.php?id='.$row["book_id"].'" class="book-more">Xem chi tiết sản phẩm</a></div>
                             </div>';
                         }
                     } else {
