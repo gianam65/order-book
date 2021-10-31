@@ -37,16 +37,17 @@
                     if(!$conn) {
                         die("Không thể kết nối");
                     }
-                    $sql = "SELECT book_image, book_name, book_price, book_desc FROM tb_books WHERE book_status = 0";
+                    $sql = "SELECT book_image, book_name, book_author ,book_price, book_desc FROM tb_books WHERE book_status = 0";
                     $result = mysqli_query($conn,$sql);
                     
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)) {
                         echo '<div class="book-item">
                                 <img src=../.././src/images/'.$row["book_image"].' alt="">
-                                <h3 class="book-name global-color">'.$row["book_name"].'</h3>
-                                <p class="book-price">'.$row["book_price"].'</p>
-                                <span class="book-desc">'.$row["book_desc"].'</span>
+                                <h3 class="book-name global-color">Tên sách: '.$row["book_name"].'</h3>
+                                <p class="book-price">Giá sách: '.$row["book_price"].'</p>
+                                <p class="book-price">Tác giả: '.$row["book_author"].'</p>
+                                <span class="book-desc">Mô tả: '.$row["book_desc"].'</span>
                                 <div class="box-wrapper"><a href="#" class="book-more">Xem chi tiết sản phẩm</a></div>
                             </div>';
                         }
@@ -61,6 +62,13 @@
                         </div>';
                     }
                 ?>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container footer-infor">
+                <span>Privacy Policy - Term and conditions</span>
+                <span>@gianam65 - @nhatminh25 - @nghia241</span>         
             </div>
         </div>
 

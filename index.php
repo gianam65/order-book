@@ -81,7 +81,7 @@
                     if(!$conn) {
                         die("Không thể kết nối");
                     }
-                    $sql = "SELECT book_image, book_name, book_price, book_desc FROM tb_books WHERE book_status = 1";
+                    $sql = "SELECT book_image, book_name, book_author ,book_price, book_desc FROM tb_books WHERE book_status = 1";
                     $result = mysqli_query($conn,$sql);
                     
                     if(mysqli_num_rows($result) > 0){
@@ -90,42 +90,8 @@
                                 <img src=./src/images/'.$row["book_image"].' alt="">
                                 <h3 class="book-name global-color">Tên sách: '.$row["book_name"].'</h3>
                                 <p class="book-price">Giá sách: '.$row["book_price"].'</p>
+                                <p class="book-price">Tác giả: '.$row["book_author"].'</p>
                                 <span class="book-desc">Mô tả: '.$row["book_desc"].'</span>
-                                <div class="box-wrapper"><a href="#" class="book-more">Xem chi tiết sản phẩm</a></div>
-                            </div>';
-                        }
-                    } else {
-                        echo '<div class="container no-data-show">
-                            <p class="no-data-text">
-                                Xin trân trọng cảm ơn Quý khách hàng đã tin tưởng sử dụng sản phẩm từ chúng tôi. Thời gian qua chúng tôi đã nhận được rất nhiều đơn đặt sách từ quý khách, tuy nhiên số lượng hàng về không kịp so với thời gian so với thời gian.
-                                Vì vậy, hiện nay các loại sách chưa được phát hành đã hết.
-                                Chúng tôi thành thật xin lỗi vì những bất tiện nêu trên và trong thời gian tới chúng tôi sẽ cố gắng để đáp ứng tốt hơn những yêu cầu của Quý khách.
-                            </p>
-                            <img src="./src/images/no-book-show.png" />
-                        </div>';
-                    }
-                ?>
-            </div>
-        </div>
-
-        <div class="container">
-            <h2 class="text-center">Chưa phát hành</h2>
-            <div class="list-book-show">
-                <?php
-                    $conn = mysqli_connect('localhost','root','','database_book');
-                    if(!$conn) {
-                        die("Không thể kết nối");
-                    }
-                    $sql = "SELECT book_image, book_name, book_price, book_desc FROM tb_books WHERE book_status = 0";
-                    $result = mysqli_query($conn,$sql);
-                    
-                    if(mysqli_num_rows($result) > 0){
-                        while($row = mysqli_fetch_assoc($result)) {
-                        echo '<div class="book-item">
-                                <img src=./src/images/'.$row["book_image"].' alt="">
-                                <h3 class="book-name global-color">'.$row["book_name"].'</h3>
-                                <p class="book-price">'.$row["book_price"].'</p>
-                                <span class="book-desc">'.$row["book_desc"].'</span>
                                 <div class="box-wrapper"><a href="#" class="book-more">Xem chi tiết sản phẩm</a></div>
                             </div>';
                         }
@@ -162,6 +128,13 @@
                     Cũng như cậu bé dùng giỏ than xách nước, việc đọc sách không thể thấy ngay kết quả, thậm chí bạn còn không nhận ra những thay đổi, những kết quả đạt được, tuy nhiên nó sẽ dần thấm sau vào trí thức của bạn, như những giọt nước đã ăn sâu, cuốn trôi hết bụi bẩn trên chiếc giỏ kia một cách từ từ chậm rãi mà chính bạn không thể nhận ra.
                 </p>
                 <img src="https://images.pexels.com/photos/3563625/pexels-photo-3563625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container footer-infor">
+                <span>Privacy Policy - Term and conditions</span>
+                <span>@gianam65 - @nhatminh25 - @nghia241</span>         
             </div>
         </div>
 
