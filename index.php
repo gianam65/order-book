@@ -18,11 +18,11 @@
                     <a class="navbar-brand home-link" href="#">TRANG CHỦ</a>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link home-link" href="#"><span class="sr-only">Đăng kí</span></a>
+                            <a class="nav-link home-link" href="./route/global/register.php"><span class="sr-only">Đăng kí</span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link home-link" href="#">Đăng nhập</a>
+                            <a class="nav-link home-link" href="./route/global/login.php">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link home-link" href="./route/global/not-active.php">Chưa phát hành</a>
