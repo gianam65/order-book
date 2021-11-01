@@ -1,5 +1,5 @@
 <?php
-    $idGet = $_GET['id'];
+    $idGet = $_GET['update'];
 
     $conn = mysqli_connect('localhost','root','','database_book'); 
     if(!$conn)
@@ -23,7 +23,7 @@
     }
     else
     {
-        echo;
+        
     } 
 
     $result = mysqli_query($conn,$sql);
@@ -49,13 +49,13 @@
         if($count > 0)
         {
             $sql3="UPDATE tb_book SET 
-            book_id     = '$id',
-            book_name   ='$book_name',
-            book_price  ='$book_price',
-            book_author ='$book_author',
-            book_desc   ='$book_desc',
-            book_iamge  ='$book_image',
-            book_status ='$book_status',
+            book_id     =   '$id',
+            book_name   =   '$book_name',
+            book_price  =   '$book_price',
+            book_author =   '$book_author',
+            book_desc   =   '$book_desc',
+            book_iamge  =   '$book_image',
+            book_status =   '$book_status',
             WHERE book_id = $book_id";
             $check = mysqli_query($conn,$sql3);
             if($check == TRUE)
