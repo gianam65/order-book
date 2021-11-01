@@ -1,67 +1,75 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Đăng ký</title>
-    <link rel="stylesheet" href="../.././css/admin-dashboard.css">
-    <link rel="stylesheet" href="../.././css/style.css">
-  </head>
-  <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light home-nav">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<?php 
 
-                <div class="collapse navbar-collapse home-menu" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="#">TRANG CHỦ</a>
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#"><span class="sr-only">ĐĂNG KÍ</span></a>
-                        </li>
+error_reporting(0);
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ĐĂNG NHẬP</a>
-                        </li>
-                    </ul>
+session_start();
 
-                    <form class="form-inline my-2 my-lg-0 search-section">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Nhập tên sách" aria-label="search">
-                        <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">
-                            TÌM KIẾM
-                        </button>
-                    </form>
-                </div>
+if (isset($_SESSION['username'])) {
+    header("Location: index.php");
+}
+
+if (isset($_POST['submit'])) {
+	$username = $_POST['username'];
+	$email = $_POST['email'];
+	$password = md5($_POST['password']);
+	$cpassword = md5($_POST['cpassword']);
+
+	if ($password == $cpassword) {
+		$sql = "SELECT * FROM users WHERE email='$email'";
+		$result = mysqli_query($conn, $sql);
+		if (!$result->num_rows > 0) {
+			$sql = "INSERT INTO users (username, email, password)
+					VALUES ('$username', '$email', '$password')";
+			$result = mysqli_query($conn, $sql);
+			if ($result) {
+				echo "<script>alert('Wow! User Registration Completed.')</script>";
+				$username = "";
+				$email = "";
+				$_POST['password'] = "";
+				$_POST['cpassword'] = "";
+			} else {
+				echo "<script>alert('Woops! Something Wrong Went.')</script>";
+			}
+		} else {
+			echo "<script>alert('Woops! Email Already Exists.')</script>";
+		}
+		
+	} else {
+		echo "<script>alert('Password Not Matched.')</script>";
+	}
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../.././css/login.css">
+	<title>Đăng ký</title>
+</head>
+<body>
+	<div class="container">
+		<form action="" method="POST" class="login-email">
+            <p class="login-text" style="font-size: 2rem; font-weight: 800;">Đăng ký</p>
+			<div class="input-group">
+				<input type="text" placeholder="Username" name="username">
+			</div>
+			<div class="input-group">
+				<input type="email" placeholder="Email" name="email">
+			</div>
+			<div class="input-group">
+				<input type="password" placeholder="Password" name="password">
             </div>
-        </nav>
-    
-                        <form action="register.php" method="post">
-		<table>
-			<tr>
-				<td colspan="2">Form đăng ký</td>
-			</tr>	
-			<tr>
-				<td>Username :</td>
-				<td><input type="text" id="username" name="username"></td>
-			</tr>
-			<tr>
-				<td>Password :</td>
-				<td><input type="password" id="pass" name="pass"></td>
-			</tr>
-			<tr>
-				<td>Họ Tên :</td>
-				<td><input type="text" id="name" name="name"></td>
-			</tr>
-			<tr>
-				<td>Email :</td>
-				<td><input type="text" id="email" name="email"></td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center"><input type="submit" name="btn_submit" value="Đăng ký"></td>
-			</tr>
-
-		</table>
-    </body>
-`</html>
+            <div class="input-group">
+				<input type="password" placeholder="Confirm Password" name="cpassword">
+			</div>
+			<div class="input-group">
+				<button name="submit" class="btn">Đăng ký</button>
+			</div>
+			<p class="login-register-text">Đã có tài khoản ? <a href="./login.php">Vui lòng đăng nhập</a>.</p>
+		</form>
+	</div>
+</body>
+</html>
