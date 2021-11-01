@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -59,15 +63,21 @@
                                 $row["book_status"] = "Đã phát hành";
                             }
                             echo '<img src=../.././src/images/'.$row["book_image"].' alt="">
-                                <div class="detail-infor">
+                            <div class="detail-infor">
+                                <form action="./cart.php?id='.$row["book_id"].'" method="POST">
                                     <h3 class="detail-name global-color">'.$row["book_name"].'</h3>
                                     <p class="detail-price">Giá sách: '.$row["book_price"].'</p>
                                     <p class="detail-author">Tác giả: '.$row["book_author"].'</p>
                                     <span class="detail-desc">Mô tả: '.$row["book_desc"].'</span>
                                     <p class="detail-type">Thể loại: '.$row["book_type"].'</p>
                                     <span class="detail-status">Trạng thái: '.$row["book_status"].'</span><br>
-                                    <a href="#" class="btn add-to-cart">Thêm vào giỏ hàng</a>
-                                </div>';
+                                    <input type="hidden" name="book_name" value="'.$row["book_name"].'">
+                                    <input type="hidden" name="book_price" value="'.$row["book_price"].'">
+                                    <input type="hidden" name="book_image" value="'.$row["book_image"].'">
+                                    <input type="hidden" name="book_author" value="'.$row["book_author"].'">
+                                    <button name="add-to-cart" class="btn add-to-cart">Thêm vào giỏ hàng</button>
+                                </form>
+                            </div>';
                         }
                     }
                 ?>
@@ -84,5 +94,7 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="../.././js/ajax.js"></script>            
     </body>
 </html>
