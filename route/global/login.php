@@ -21,7 +21,9 @@
 			<div class="input-group">
 				<button name="login" class="btn">Đăng nhập</button>
 			</div>
-			<p class="login-register-text">Chưa có tài khoản ? <a href="./register.php">Đăng ký tại đây</a>.</p>
+			<p class="login-register-text">Chưa có tài khoản ? <a href="./register.php">Đăng ký ngay</a>.</p>
+			<p class="login-register-text">Đăng nhập với tư cách admin ? <a href="./login-admin.php">Tại đây</a></p>
+			<p class="login-register-text">Đăng nhập với tư cách manager ? <a href="./login-manager.php">Tại đây</a></p>
 		</form>
 	</div>
 </body>
