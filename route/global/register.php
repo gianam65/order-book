@@ -11,19 +11,19 @@
 		<form action="../.././src/process-register.php" method="POST" class="login-email">
             <p class="login-text" style="font-size: 2rem; font-weight: 800;">Đăng ký</p>
 			<div class="input-group">
-				<input type="text" placeholder="Username" name="username">
+				<input type="text" placeholder="Tài khoản" name="username">
 			</div>
 			<div class="input-group">
 				<input type="email" placeholder="Email" name="email">
 			</div>
 			<div class="input-group">
-				<input type="text" placeholder="Phone" name="phone">
+				<input type="text" placeholder="Số điện thoại" name="phone">
 			</div>
 			<div class="input-group">
-				<input type="password" placeholder="Password" name="password">
+				<input type="password" placeholder="Mật khẩu" name="password">
             </div>
             <div class="input-group">
-				<input type="password" placeholder="Confirm Password" name="cpassword">
+				<input type="password" placeholder="Xác nhận mật khẩu" name="cpassword">
 			</div>
 			<div class="input-group">
 				<button name="handleRegister" class="btn">Đăng ký</button>
