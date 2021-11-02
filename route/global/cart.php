@@ -96,7 +96,17 @@
                                     </form>
                                 </div>                   
                             </div>';
+                            $total = $total + $values["book_price"];
                         }
+                        $totalFormat = number_format($total);
+                        echo '<div class="total-price">Total: '.$totalFormat.' VNĐ</div>';
+                        echo '
+                            <div class="return-div">
+                                <a href="../.././index.php" class="return-home btn">Quay về trang chủ</a>
+                                <a href="#" class="buy btn btn-danger">Đặt hàng</a>
+                            </div>
+                        ';
+                        
                     } else {
                         echo '<div class="cart-empty">
                             <h3 class="text-center global-color">Giỏ hàng của bạn trống rỗng</h3>
@@ -116,6 +126,8 @@
                     }
                 ?>
             </div>
+
+            
         </div>
    
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
