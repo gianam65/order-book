@@ -13,7 +13,7 @@
         <div class="container add-book-div">
             <h3 class="global-title">Admin update books section</h3>
             <span class="global-error">Lưu ý: Phải điền tất cả thông tin sách vào chỗ trống</span>
-            <form action="../.././src/process-update.php" method="POST">
+            <form action="../.././src/process-update.php" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Tên sách</label>
                     <input type="text" class="form-control" name='bookName'>
@@ -41,6 +41,7 @@
                         <option value="1">Đã cung cấp</option>
                     </select>
                 </div>
+                <input type="hidden" name="book_id" value=<?php echo $_GET["update"]?>>
                 <button class='btn btn-success btn-add-car' name='updateBook'>Click to save update</button>
             </form>
         </div>
