@@ -14,7 +14,7 @@
 
         if(mysqli_num_rows($result) > 0){
             $_SESSION['loginOK'] = $username;
-            header("Location: .././route/manager/index.php");
+            header("Location: .././index.php");
         } else{
             header("Location: .././error.php");
         }
