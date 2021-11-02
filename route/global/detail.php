@@ -78,6 +78,10 @@
                                     <input type="hidden" name="book_price" value="'.$row["book_price"].'">
                                     <input type="hidden" name="book_image" value="'.$row["book_image"].'">
                                     <input type="hidden" name="book_author" value="'.$row["book_author"].'">
+                                    <div class="quantity-div">
+                                        <span>Số lượng:  </span>
+                                        <input type="number" name="book_quantity" class="quantity" min=1 placeholder="1" >
+                                    </div>
                                     <button name="add-to-cart" class="btn add-to-cart">Thêm vào giỏ hàng</button>
                                 </form>
                             </div>';

@@ -48,18 +48,19 @@
             <div class="cart-list">
                 <?php
                     if(isset($_POST["add-to-cart"])) {
-                        if(isset($_SESSION["add-cart"])) {
-                            $book_array_id = array_column($_SESSION["add-cart"], "book_id");
+                        if(isset($_SESSION["add-cart-item"])) {
+                            $book_array_id = array_column($_SESSION["add-cart-item"], "book_id");
                             if(!in_array($_GET["id"], $book_array_id)) {
-                                $count = count($_SESSION["add-cart"]);
+                                $count = count($_SESSION["add-cart-item"]);
                                 $book_array = array(
                                     'book_id' => $_GET["id"],
                                     'book_price' => $_POST["book_price"],
                                     'book_name' => $_POST["book_name"],
                                     'book_author' => $_POST["book_author"],
                                     'book_image' => $_POST["book_image"],
+                                    'book_quantity' => $_POST["book_quantity"],
                                 );
-                                $_SESSION["add-cart"][$count] = $book_array;
+                                $_SESSION["add-cart-item"][$count] = $book_array;
                             } else {
                                 echo '<script>alert("Sách đã có trong giỏ hàng")</script>';
                             }
@@ -70,16 +71,17 @@
                                 'book_author' => $_POST["book_author"],
                                 'book_name' => $_POST["book_name"],
                                 'book_image' => $_POST["book_image"],
+                                'book_quantity' => $_POST["book_quantity"],
                             );
-                            $_SESSION["add-cart"][0] = $book_array;
+                            $_SESSION["add-cart-item"][0] = $book_array;
                         }
                     }
                 ?>
 
                 <?php
-                    if(!empty($_SESSION["add-cart"])) {
+                    if(!empty($_SESSION["add-cart-item"])) {
                         $total = 0;
-                        foreach($_SESSION["add-cart"] as $keys => $values) {
+                        foreach($_SESSION["add-cart-item"] as $keys => $values) {
                             echo '
                             <div class="cart-item">
                                 <div class="cart-box">
@@ -91,12 +93,13 @@
                                     </div> 
                                 </div>
                                 <div class="cart-action">
+                                    <span>Số lượng: '.$values["book_quantity"].'</span>
                                     <form action="delete-cart" method="POST">
                                         <a href="cart.php?action=delete&id='.$values["book_id"].'" class="btn btn-danger" type="submit">Xóa</a>
                                     </form>
                                 </div>                   
                             </div>';
-                            $total = $total + $values["book_price"];
+                            $total += $values["book_quantity"] * $values["book_price"];
                         }
                         $totalFormat = number_format($total);
                         echo '<div class="total-price">Total: '.$totalFormat.' VNĐ</div>';
