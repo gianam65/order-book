@@ -6,6 +6,32 @@
     justify-content: center;
 }
 
+.total-price {
+    text-align: right;
+    padding: 5px;
+    font-weight: 500;
+    border-top: 1px solid #d9d9d9;
+}
+
+.return-div {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.return-home {
+    background: #6C63FF;
+    color: white;
+    border: 1px solid transparent;
+    margin-right: 10px;
+}
+
+.return-home:hover {
+    background: #fff;
+    border: 1px solid #6c63ff;
+}
+
 .cart-item {
     display: flex;
     align-items: center;
