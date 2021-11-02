@@ -32,6 +32,12 @@
 
 .cart-item-name {
     font-size: 15px;
+    max-width: 400px;
+    display: --webkit-box;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .cart-price {
@@ -41,4 +47,14 @@
 .cart-author {
     font-weight: 500;
     margin-bottom: 10px;
+}
+
+.cart-empty {
+    width: 100%;
+}
+
+.cart-empty h3 {
+    position: absolute;
+    top: 50%;
+    left: 30%;
 }
