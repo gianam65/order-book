@@ -24,6 +24,10 @@
                         <li class="nav-item">
                             <a class="nav-link home-link" href="./login.php">Đăng nhập</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link home-link" href="./cart.php">Xem giỏ hàng</a>
+                        </li>
                     </ul>
                 </div>
             </div>

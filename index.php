@@ -27,8 +27,10 @@
                         <li class="nav-item">
                             <a class="nav-link home-link" href="./route/global/not-active.php">Chưa phát hành</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link home-link" href="./route/global/cart.php">Xem giỏ hàng</a>
+                        </li>
                     </ul>
-
                     <form class="form-inline my-2 my-lg-0 search-section" action="./route/global/search-result.php" method="POST">
                         <input class="form-control mr-sm-2" name="search-value" id="search-value" type="search" placeholder="Nhập tên sách" aria-label="search">
                         <button class="btn my-2 my-sm-0 search-btn" id="search-feature" type="submit">
