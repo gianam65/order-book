@@ -56,6 +56,16 @@
     margin-left: 20px;
 }
 
+.cart-action {
+    display: flex;
+    align-items: center;
+}
+
+.cart-action span {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
 .cart-item-name {
     font-size: 15px;
     max-width: 400px;
