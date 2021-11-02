@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,21 +19,21 @@
                 </button>
 
                 <div class="collapse navbar-collapse home-menu" id="navbarTogglerDemo01">
-                    <a class="navbar-brand home-link" href="#">TRANG CHỦ</a>
+                    <a class="navbar-brand home-link" href="../.././index.php">TRANG CHỦ</a>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link home-link" href="./route/global/register.php"><span class="sr-only">Đăng kí</span></a>
+                            <a class="nav-link home-link" href="./register.php"><span class="sr-only">Đăng kí</span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link home-link" href="./route/global/login.php">Đăng nhập</a>
+                            <a class="nav-link home-link" href="./login.php">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link home-link" href="./route/global/not-active.php">Chưa phát hành</a>
+                            <a class="nav-link home-link" href="./not-active.php">Chưa phát hành</a>
                         </li>
                     </ul>
 
-                    <form class="form-inline my-2 my-lg-0 search-section" action="./route/global/search-result.php" method="POST">
+                    <form class="form-inline my-2 my-lg-0 search-section" action="./search-result.php" method="POST">
                         <input class="form-control mr-sm-2" name="search-value" id="search-value" type="search" placeholder="Nhập tên sách" aria-label="search">
                         <button class="btn my-2 my-sm-0 search-btn" id="search-feature" type="submit">
                             TÌM KIẾM
@@ -43,21 +46,75 @@
         <div class="container">
             <h2 class="text-center">Giỏ Hàng</h2>
             <div class="cart-list">
-                <div class="cart-item">
-                    <div class="cart-box">
-                        <img src="https://www.vinabook.com/images/thumbnails/product/43x/366182_muon-kiep-nhan-sinh-many-times-many-lives-tap-2.jpg" alt="" class="cart-img">
-                        <div class="cart-infor">
-                            <h3 class="cart-item-name global-color">Name1231</h3>
-                            <p class="cart-author">Tác giả: Xuân Diệu</p>
-                            <span class="cart-price">Giá: 12000</span>
-                        </div> 
-                    </div>
-                    <div class="cart-action">
-                        <form action="delete-cart">
-                            <button class="btn btn-danger" type="submit">Xóa</button>
-                        </form>
-                    </div>                   
-                </div>
+                <?php
+                    if(isset($_POST["add-to-cart"])) {
+                        if(isset($_SESSION["add-cart"])) {
+                            $book_array_id = array_column($_SESSION["add-cart"], "book_id");
+                            if(!in_array($_GET["id"], $book_array_id)) {
+                                $count = count($_SESSION["add-cart"]);
+                                $book_array = array(
+                                    'book_id' => $_GET["id"],
+                                    'book_price' => $_POST["book_price"],
+                                    'book_name' => $_POST["book_name"],
+                                    'book_author' => $_POST["book_author"],
+                                    'book_image' => $_POST["book_image"],
+                                );
+                                $_SESSION["add-cart"][$count] = $book_array;
+                            } else {
+                                echo '<script>alert("Sách đã có trong giỏ hàng")</script>';
+                            }
+                        } else {
+                            $book_array = array(
+                                'book_id' => $_GET["id"],
+                                'book_price' => $_POST["book_price"],
+                                'book_author' => $_POST["book_author"],
+                                'book_name' => $_POST["book_name"],
+                                'book_image' => $_POST["book_image"],
+                            );
+                            $_SESSION["add-cart"][0] = $book_array;
+                        }
+                    }
+                ?>
+
+                <?php
+                    if(!empty($_SESSION["add-cart"])) {
+                        $total = 0;
+                        foreach($_SESSION["add-cart"] as $keys => $values) {
+                            echo '
+                            <div class="cart-item">
+                                <div class="cart-box">
+                                    <img src=../.././src/images/'.$values["book_image"].' alt="" class="cart-img">
+                                    <div class="cart-infor">
+                                        <h3 class="cart-item-name global-color">'.$values["book_name"].'</h3>
+                                        <p class="cart-author">Tác giả: '.$values["book_author"].'</p>
+                                        <span class="cart-price">Giá: '.$values["book_price"].'</span>
+                                    </div> 
+                                </div>
+                                <div class="cart-action">
+                                    <form action="delete-cart" method="POST">
+                                        <a href="cart.php?action=delete&id='.$values["book_id"].'" class="btn btn-danger" type="submit">Xóa</a>
+                                    </form>
+                                </div>                   
+                            </div>';
+                        }
+                    } else {
+                        echo '<div class="cart-empty">
+                            <h3 class="text-center global-color">Giỏ hàng của bạn trống rỗng</h3>
+                            <img src="../.././src/images/empty-cart.png" />
+                        </div>';
+                    }
+
+                    if(isset($_GET["action"])) {
+                        if($_GET["action"] == "delete") {
+                            foreach($_SESSION["add-cart"] as $keys => $values) {
+                                if($values["book_id"] == $_GET["id"]) {
+                                    unset($_SESSION["add-cart"][$keys]);
+                                    echo "<script>window.location = 'cart.php'</script>";
+                                }
+                            }
+                        }
+                    }
+                ?>
             </div>
         </div>
    

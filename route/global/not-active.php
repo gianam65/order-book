@@ -18,11 +18,11 @@
                     <a class="navbar-brand home-link" href="../.././index.php">TRANG CHỦ</a>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link home-link" href="#"><span class="sr-only">Đăng kí</span></a>
+                            <a class="nav-link home-link" href="./register.php"><span class="sr-only">Đăng kí</span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link home-link" href="#">Đăng nhập</a>
+                            <a class="nav-link home-link" href="./login.php">Đăng nhập</a>
                         </li>
                     </ul>
                 </div>
@@ -37,7 +37,7 @@
                     if(!$conn) {
                         die("Không thể kết nối");
                     }
-                    $sql = "SELECT book_image, book_name, book_author ,book_price, book_desc FROM tb_books WHERE book_status = 0";
+                    $sql = "SELECT book_id, book_image, book_name, book_author ,book_price, book_desc FROM tb_books WHERE book_status = 0";
                     $result = mysqli_query($conn,$sql);
                     
                     if(mysqli_num_rows($result) > 0){
@@ -48,7 +48,7 @@
                                 <p class="book-price">Giá sách: '.$row["book_price"].'</p>
                                 <p class="book-price">Tác giả: '.$row["book_author"].'</p>
                                 <span class="book-desc">Mô tả: '.$row["book_desc"].'</span>
-                                <div class="box-wrapper"><a href="#" class="book-more">Xem chi tiết sản phẩm</a></div>
+                                <div class="box-wrapper"><a href="./detail.php?id='.$row["book_id"].'" class="book-more">Xem chi tiết sản phẩm</a></div>
                             </div>';
                         }
                     } else {
