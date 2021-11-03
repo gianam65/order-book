@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION["loginOK"])) {
+        echo '<script>alert("Bạn phải đăng nhập để đặt hàng")</script>';
+        echo '<script>window.location = "./login.php"</script>';
+    }
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,9 +36,9 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="container order">
             <div class="order-section">
-                <h3 class="text-center global-color">Điền thông tin đặt hàng</h3>
+                <h3 class="text-center global-color">Điền thông tin nhận hàng</h3>
 
                 <form action="../.././src/process-order.php" method="POST" class="order-wrapper">
                     <div class="mb-3">
@@ -47,21 +55,43 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Ghi chú:</label><br>
-                        <textarea name="orderNote" cols="45" rows="7"></textarea>
+                        <textarea name="orderNote" cols="20" rows="7"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Tổng tiền phải thanh toán:  </label>
                         <span class="global-color total-price"><?php
-                            echo $_GET['total'];
-                        ?></span>
+                            echo number_format($_GET['total']);
+                        ?> VNĐ</span>
                         <input type="hidden" name="orderTotal" value=<?php echo $_GET['total']; ?>>
+                        <input type="hidden" name="userID" value=<?php echo $_SESSION['user_id']; ?>>
                     </div>
                     <button class='btn btn-success btn-add-car' name='addOrder'>Click to order</button>
                 </form>
             </div>
+
+            <div class="order-detail">
+                <h3 class="text-center global-color">Sách muốn mua</h3>
+                <?php
+                    foreach($_SESSION["add-cart-item"] as $keys => $values) {
+                        echo '
+                        <div class="order-item">
+                            <div class="order-box">
+                                <img src=../.././src/images/'.$values["book_image"].' alt="" class="cart-img">
+                                <div class="order-infor">
+                                    <h3 class="order-item-name global-color">'.$values["book_name"].'</h3>
+                                    <p class="order-author">Tác giả: '.$values["book_author"].'</p>
+                                    <span class="order-price">Giá: '.$values["book_price"].'</span>
+                                </div> 
+                            </div>
+                            <div class="order-count">
+                                <span>Số lượng: '.$values["book_quantity"].'</span>
+                            </div>                   
+                        </div>';
+                    }
+                ?>
+            </div>
         </div>
 
-   
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
