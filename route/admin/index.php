@@ -19,7 +19,7 @@
                 <a class="navbar-brand home-link" href="../.././index.php">TRANG CHỦ</a>
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link home-link" href="../.././src/process-logout-admin.php">ĐĂNG XUẤT</a>
+                        <a class="nav-link home-link" href="../.././src/process-logout.php">ĐĂNG XUẤT</a>
                     </li>
                 </ul>
 

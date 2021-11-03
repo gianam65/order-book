@@ -13,7 +13,7 @@
         $result = mysqli_query($conn,$sql);
 
         if(mysqli_num_rows($result) > 0){
-            $_SESSION['loginAdmin'] = $admin_name;
+            $_SESSION['loginOK'] = $admin_name;
             header("Location: .././route/admin/index.php");
         } else{
             header("Location: .././error.php");
