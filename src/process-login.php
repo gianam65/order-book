@@ -14,6 +14,8 @@
 
         if(mysqli_num_rows($result) > 0){
             $_SESSION['loginOK'] = $username;
+            $row_data = mysqli_fetch_array($result);
+            $_SESSION['user_id'] = $row_data['user_id'];
             header("Location: .././index.php");
         } else{
             header("Location: .././error.php");

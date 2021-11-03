@@ -1,5 +1,5 @@
 .order-section {
-    width: 60%;
+    width: 50%;
     margin: auto;
     border: 1px solid #d9d9d9;
     padding: 15px;
@@ -12,4 +12,71 @@
 
 .total-price {
     font-weight: 500;
+}
+
+.order {
+    display: flex;
+    align-items: flex-start;
+}
+
+.order-detail {
+    width: 50%;
+    margin-left: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.order-item {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.order-item-name {
+    font-size: 15px;
+}
+
+.order-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    width: 75%;
+}
+
+.order-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.order-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+    .order {
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .order-section {
+        width: 100%;
+    }
+    .order-detail {
+        width: 100%;
+        margin: 15px auto;
+        padding: 0;
+    }
 }
