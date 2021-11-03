@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 02, 2021 lúc 04:47 PM
+-- Thời gian đã tạo: Th10 03, 2021 lúc 03:59 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -126,6 +126,34 @@ INSERT INTO `tb_book_manager` (`manager_id`, `manager_name`, `manager_pass`, `ma
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `tb_order`
+--
+
+CREATE TABLE `tb_order` (
+  `order_id` int(10) UNSIGNED NOT NULL,
+  `order_user_name` varchar(50) NOT NULL,
+  `order_user_location` varchar(100) NOT NULL,
+  `order_user_phone` varchar(30) NOT NULL,
+  `order_user_note` varchar(255) NOT NULL,
+  `order_total` double NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tb_order`
+--
+
+INSERT INTO `tb_order` (`order_id`, `order_user_name`, `order_user_location`, `order_user_phone`, `order_user_note`, `order_total`, `user_id`) VALUES
+(1, 'Gia Nam', 'Hà Nội', '0969193637', 'Người dễ bị tổn thương', 380000, 1),
+(3, 'nammdev', 'Nghệ An', '0969193637', 'Hehee', 30000, 4),
+(4, 'nammdev', 'Nghệ An', '0969193637', 'Hehee', 30000, 4),
+(5, 'Minh Béo cực múp', 'Hà Nội', '0969193637', 'ABC', 816000, 5),
+(12, 'nam', 'Hà Nội', '0969193637', 'Hàng dễ vỡ', 590000, 5),
+(14, 'Nguyễn Gia Nam', 'Hà Nội', '0969193637', '123abc', 1070000, 5);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `tb_users`
 --
 
@@ -142,7 +170,13 @@ CREATE TABLE `tb_users` (
 --
 
 INSERT INTO `tb_users` (`user_id`, `user_name`, `user_pass`, `user_email`, `user_phone`) VALUES
-(1, 'nammmdev', '123456', 'nammmdev@gmail.com', '1234567899');
+(1, 'n4m', '123456', 'n4m@gmail.com', '123456789'),
+(2, 'namm123', '$2y$10$33r2mICq1wLbmPC3jZuaq.c3he3NtouKH4eOYgw3uVl2TTiBoLZ86', 'namm123@gmail.com', '0969193637'),
+(3, 'nammm123', '$2y$10$OG/ejM05Zgj7klERaRMs1u/GT.0moKMa6B.00txFhTrH9kFedfBPK', 'nammm123@gmail.com', '0969193637'),
+(4, '1951060877', '$2y$10$PJJ5KCRooiITBPwsvlFIDOLzDY9QPXcBsQeJUiE5SDeFtlGEBPcLS', '0969193637@gmail.com', '123456'),
+(5, 'gianam', '123456', 'gianam@gmail.com', '0969193637'),
+(6, 'root', '$2y$10$xa5NBhBqJYfeN/NxPj3BzuVdlJnzPDDrVqczrpOA2qjTc05FeQdhq', 'root@gmail.com', '0969193637'),
+(7, 'namgia', '$2y$10$p9RPB058OYqlBhtEKN56uOURtr5iZLZzwNkfNgc/Kv.Z5U5XB2Au6', 'namgia@gmail.com', '0969193637');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -165,6 +199,13 @@ ALTER TABLE `tb_books`
 --
 ALTER TABLE `tb_book_manager`
   ADD PRIMARY KEY (`manager_id`);
+
+--
+-- Chỉ mục cho bảng `tb_order`
+--
+ALTER TABLE `tb_order`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `constrain` (`user_id`);
 
 --
 -- Chỉ mục cho bảng `tb_users`
@@ -193,6 +234,28 @@ ALTER TABLE `tb_books`
 --
 ALTER TABLE `tb_book_manager`
   MODIFY `manager_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `tb_order`
+--
+ALTER TABLE `tb_order`
+  MODIFY `order_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT cho bảng `tb_users`
+--
+ALTER TABLE `tb_users`
+  MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
+--
+
+--
+-- Các ràng buộc cho bảng `tb_order`
+--
+ALTER TABLE `tb_order`
+  ADD CONSTRAINT `constrain` FOREIGN KEY (`user_id`) REFERENCES `tb_users` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
