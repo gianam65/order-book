@@ -106,7 +106,7 @@
                         echo '
                             <div class="return-div">
                                 <a href="../.././index.php" class="return-home btn">Quay về trang chủ</a>
-                                <a href="#" class="buy btn btn-danger">Đặt hàng</a>
+                                <a href="./order.php?total='.$total.'" class="buy btn btn-danger">Đặt hàng</a>
                             </div>
                         ';
                         
