@@ -80,7 +80,7 @@
                                     <input type="hidden" name="book_author" value="'.$row["book_author"].'">
                                     <div class="quantity-div">
                                         <span>Số lượng:  </span>
-                                        <input type="number" name="book_quantity" class="quantity" min=1 placeholder="1" >
+                                        <input type="number" name="book_quantity" class="quantity" min="1" require value="1" placeholder="1" >
                                     </div>
                                     <button name="add-to-cart" class="btn add-to-cart">Thêm vào giỏ hàng</button>
                                 </form>

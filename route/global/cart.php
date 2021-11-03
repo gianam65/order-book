@@ -99,7 +99,7 @@
                                     </form>
                                 </div>                   
                             </div>';
-                            $total += $values["book_quantity"] * $values["book_price"];
+                            $total += (int)$values["book_quantity"] * (float)$values["book_price"];
                         }
                         $totalFormat = number_format($total);
                         echo '<div class="total-price">Total: '.$totalFormat.' VNĐ</div>';
