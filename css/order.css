@@ -1,0 +1,15 @@
+.order-section {
+    width: 60%;
+    margin: auto;
+    border: 1px solid #d9d9d9;
+    padding: 15px;
+}
+
+.order-wrapper {
+    width: calc(100% - 120px);
+    margin: auto;
+}
+
+.total-price {
+    font-weight: 500;
+}
