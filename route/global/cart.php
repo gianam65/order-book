@@ -119,9 +119,9 @@
 
                     if(isset($_GET["action"])) {
                         if($_GET["action"] == "delete") {
-                            foreach($_SESSION["add-cart"] as $keys => $values) {
+                            foreach($_SESSION["add-cart-item"] as $keys => $values) {
                                 if($values["book_id"] == $_GET["id"]) {
-                                    unset($_SESSION["add-cart"][$keys]);
+                                    unset($_SESSION["add-cart-item"][$keys]);
                                     echo "<script>window.location = 'cart.php'</script>";
                                 }
                             }
