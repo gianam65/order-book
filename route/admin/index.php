@@ -65,7 +65,7 @@
                                     echo "<th>".$row["user_email"]."</th>";
                                     echo "<th>".$row["user_phone"]."</th>";
                                     echo "<th><a href=../.././src/process-delete-user.php?id=".$row["user_id"]." class='btn btn-danger'>Delete</a></th>";
-                                    echo "<th><a href=updatebook.php?update=".$row["user_id"]." class='btn btn-warning' >Update</a></th>";
+                                    echo "<th><a href=updateUser.php?update=".$row["user_id"]." class='btn btn-warning' >Update</a></th>";
                                 echo "</tr>";
                             }
                         }
