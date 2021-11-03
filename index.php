@@ -17,13 +17,26 @@
                 <div class="collapse navbar-collapse home-menu" id="navbarTogglerDemo01">
                     <a class="navbar-brand home-link" href="#">TRANG CHỦ</a>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link home-link" href="./route/global/register.php"><span class="sr-only">Đăng kí</span></a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link home-link" href="./route/global/login.php">Đăng nhập</a>
-                        </li>
+                        <?php
+                            session_start();
+                            if(!isset($_SESSION["loginOK"])) {
+                                echo '
+                                    <li class="nav-item active">
+                                        <a class="nav-link home-link" href="./route/global/register.php"><span class="sr-only">Đăng kí</span></a>
+                                    </li>
+            
+                                    <li class="nav-item">
+                                        <a class="nav-link home-link" href="./route/global/login.php">Đăng nhập</a>
+                                    </li>
+                                ';
+                            } else {
+                                echo '
+                                    <li class="nav-item">
+                                        <a class="nav-link home-link" href="./src/process-logout.php">Đăng xuất</a>
+                                    </li>
+                                ';
+                            }
+                        ?>
                         <li class="nav-item">
                             <a class="nav-link home-link" href="./route/global/not-active.php">Chưa phát hành</a>
                         </li>
