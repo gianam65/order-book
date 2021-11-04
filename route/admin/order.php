@@ -42,57 +42,53 @@
                 
                 <tbody>
                     <?php
-                        session_start();
-                        if(isset($_SESSION["user_id"])) {
-                            $userID = $_SESSION["user_id"];
-                            $conn = mysqli_connect('localhost','root','','database_book');
-                            if(!$conn) {
-                                die("Không thể kết nối");
+                        $conn = mysqli_connect('localhost','root','','database_book');
+                        if(!$conn) {
+                            die("Không thể kết nối");
+                        }
+                        $sql = "SELECT order_id, order_user_name, order_user_location, order_user_phone, order_total, order_status FROM tb_order";
+                        $result = mysqli_query($conn,$sql);
+                        
+                        if(mysqli_num_rows($result) > 0){
+                            echo '
+                            <thead>
+                                <tr>
+                                    <th scope="col">Mã đơn hàng</th>
+                                    <th scope="col">Tên người nhận</th>
+                                    <th scope="col">Tổng thanh toán</th>
+                                    <th scope="col">Địa chỉ nhận hàng</th>
+                                    <th scope="col">Số điện thoại </th>
+                                    <th scope="col">Hành động 1</th>
+                                    <th scope="col">Hành động 2</th>
+                                </tr>
+                            </thead>
+                            ';
+                            while($row = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                    echo "<th>MĐH0".$row["order_id"]."</th>";
+                                    echo "<th>".$row["order_user_name"]."</th>";
+                                    echo "<th>".number_format($row["order_total"])." VNĐ</th>";
+                                    echo "<th>".$row["order_user_location"]."</th>";
+                                    echo "<th>".$row["order_user_phone"]."</th>";
+                                    if($row["order_status"] == 0) {
+                                        echo "<th><a href=../.././src/process-update-order.php?updateId=".$row["order_id"]." class='btn btn-success'>Chấp nhận đơn hàng</a></th>";
+                                    } else {
+                                        echo "<th><span class='btn'>Đơn hàng được chấp nhận</span></th>";
+                                    }
+                                    if($row["order_status"] == 1) {
+                                        echo "<th><a href=../.././src/process-admin-delete-order.php?deleteId=".$row["order_id"]." class='btn btn-danger'>Từ chối đơn hàng</a></th>";
+                                    } else {
+                                        echo "<th><span class='btn'>Đơn hàng bị từ chối</span></th>";
+                                    }
+                                echo "</tr>";
                             }
-                            $sql = "SELECT order_id, order_user_name, order_user_location, order_user_phone, order_total, order_status FROM tb_order";
-                            $result = mysqli_query($conn,$sql);
-                            
-                            if(mysqli_num_rows($result) > 0){
-                                echo '
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Mã đơn hàng</th>
-                                        <th scope="col">Tên người nhận</th>
-                                        <th scope="col">Tổng thanh toán</th>
-                                        <th scope="col">Địa chỉ nhận hàng</th>
-                                        <th scope="col">Số điện thoại </th>
-                                        <th scope="col">Hành động 1</th>
-                                        <th scope="col">Hành động 2</th>
-                                    </tr>
-                                </thead>
-                                ';
-                                while($row = mysqli_fetch_assoc($result)) {
-                                    echo "<tr>";
-                                        echo "<th>MĐH0".$row["order_id"]."</th>";
-                                        echo "<th>".$row["order_user_name"]."</th>";
-                                        echo "<th>".number_format($row["order_total"])." VNĐ</th>";
-                                        echo "<th>".$row["order_user_location"]."</th>";
-                                        echo "<th>".$row["order_user_phone"]."</th>";
-                                        if($row["order_status"] == 0) {
-                                            echo "<th><a href=../.././src/process-update-order.php?updateId=".$row["order_id"]." class='btn btn-success'>Chấp nhận đơn hàng</a></th>";
-                                        } else {
-                                            echo "<th><span class='btn'>Đơn hàng được chấp nhận</span></th>";
-                                        }
-                                        if($row["order_status"] == 1) {
-                                            echo "<th><a href=../.././src/process-admin-delete-order.php?deleteId=".$row["order_id"]." class='btn btn-danger'>Từ chối đơn hàng</a></th>";
-                                        } else {
-                                            echo "<th><span class='btn'>Đơn hàng bị từ chối</span></th>";
-                                        }
-                                    echo "</tr>";
-                                }
-                            } else {
-                                echo '
-                                    <div class="order-empty">
-                                        <h3 class="text-center global-color">Hiện tại trang web chưa có đơn hàng nào</h3>
-                                        <img src="../.././src/images/empty-cart.png" class="admin-order" />
-                                    </div>
-                                ';
-                            }
+                        } else {
+                            echo '
+                                <div class="order-empty">
+                                    <h3 class="text-center global-color">Hiện tại trang web chưa có đơn hàng nào</h3>
+                                    <img src="../.././src/images/empty-cart.png" class="admin-order" />
+                                </div>
+                            ';
                         }
 
                         
