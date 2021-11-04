@@ -28,17 +28,21 @@
                     </li>
                 </ul>
 
-                <form class="form-inline my-2 my-lg-0 search-section" action=".././global/search-result.php" method="POST">
-                    <input class="form-control mr-sm-2" name="search-value" id="search-value" type="search" placeholder="Nhập tên sách" aria-label="search">
-                    <button class="btn my-2 my-sm-0 search-btn" id="search-feature" type="submit">
-                        TÌM KIẾM
-                    </button>
-                </form>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link home-link" href="./index.php">Quản lý người dùng</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link home-link" href="./order.php">Quản lý đơn hàng</a>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </nav>
     <div class="container">
-        <h3 class="global-title">Admin control users</h3>
+        <h3 class="global-title">Quản lý người dùng</h3>
         <div class="book-container">
             <table class="table table-info list-book">
                 <thead>

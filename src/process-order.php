@@ -12,7 +12,7 @@
         if(!$conn) {
             die("Không thể kết nối");
         }
-        $sql = "INSERT INTO `tb_order` (`order_user_name`, `order_user_location`, `order_user_phone`, `order_user_note`, `order_total`, `user_id`) VALUES ('$orderName', '$orderLocation', '$orderPhone', '$orderNote', '$orderTotal', '$userOrderID')";
+        $sql = "INSERT INTO `tb_order` (`order_user_name`, `order_user_location`, `order_user_phone`, `order_user_note`, `order_total`, `user_id`, `order_status`) VALUES ('$orderName', '$orderLocation', '$orderPhone', '$orderNote', '$orderTotal', '$userOrderID', '0')";
         $result = mysqli_query($conn,$sql);
 
         if (empty($orderName) || empty($orderNote) || empty($orderPhone) || empty($orderLocation) || empty($orderTotal) || empty($userOrderID)) {
@@ -23,7 +23,7 @@
 
         if($result > 0){
             echo '<script>alert("Đặt hàng thành công")</script>';
-            echo '<script>window.location = ".././index.php" </script>';
+            echo '<script>window.location = ".././route/global/order-detail.php" </script>';
             session_start();
             if(isset($_SESSION['add-cart-item'])){
                 unset($_SESSION['add-cart-item']);
