@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 03, 2021 lúc 03:59 PM
+-- Thời gian đã tạo: Th10 04, 2021 lúc 03:52 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -136,20 +136,22 @@ CREATE TABLE `tb_order` (
   `order_user_phone` varchar(30) NOT NULL,
   `order_user_note` varchar(255) NOT NULL,
   `order_total` double NOT NULL,
-  `user_id` int(10) UNSIGNED NOT NULL
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `order_status` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `tb_order`
 --
 
-INSERT INTO `tb_order` (`order_id`, `order_user_name`, `order_user_location`, `order_user_phone`, `order_user_note`, `order_total`, `user_id`) VALUES
-(1, 'Gia Nam', 'Hà Nội', '0969193637', 'Người dễ bị tổn thương', 380000, 1),
-(3, 'nammdev', 'Nghệ An', '0969193637', 'Hehee', 30000, 4),
-(4, 'nammdev', 'Nghệ An', '0969193637', 'Hehee', 30000, 4),
-(5, 'Minh Béo cực múp', 'Hà Nội', '0969193637', 'ABC', 816000, 5),
-(12, 'nam', 'Hà Nội', '0969193637', 'Hàng dễ vỡ', 590000, 5),
-(14, 'Nguyễn Gia Nam', 'Hà Nội', '0969193637', '123abc', 1070000, 5);
+INSERT INTO `tb_order` (`order_id`, `order_user_name`, `order_user_location`, `order_user_phone`, `order_user_note`, `order_total`, `user_id`, `order_status`) VALUES
+(3, 'nammdev', 'Nghệ An', '0969193637', 'Hehee', 30000, 4, 0),
+(4, 'nammdev', 'Nghệ An', '0969193637', 'Hehee', 30000, 4, 0),
+(16, 'nam', 'Hà Nội', '0969193637', '123', 354000, 1, 1),
+(19, 'Minh Béo cực múp', 'Hà Nội', '0969193637', 'Hehee', 472000, 5, 1),
+(20, 'Nguyễn Gia Nam', 'Hà Nội', '0969193637', 'Hàng dễ vỡ', 472000, 5, 1),
+(22, 'Nghĩa Lê', 'Hà Nội', '0123456789', 'Hehee', 250000, 5, 0),
+(23, 'Minh Béo', 'Hà Nội ', '0132456', 'agb', 590000, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -239,7 +241,7 @@ ALTER TABLE `tb_book_manager`
 -- AUTO_INCREMENT cho bảng `tb_order`
 --
 ALTER TABLE `tb_order`
-  MODIFY `order_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `order_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT cho bảng `tb_users`
