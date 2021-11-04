@@ -30,7 +30,7 @@
     <div class="container">
         <h3 class="global-title">Chi tiết đơn hàng</h3>
         <div class="book-container">
-            <table class="table table-info list-book">
+            <table class="table table-light list-book">
                 
                 <tbody>
                     <?php
@@ -67,10 +67,11 @@
                                         echo "<th>".$row["order_user_phone"]."</th>";
                                         if($row["order_status"] == 0) {
                                             echo "<th><span class='btn'>Chờ xác nhận</span></th>";
+                                            echo "<th><a href=../.././src/process-delete-order.php?id=".$row["order_id"]." class='btn btn-danger'>Hủy đơn hàng</a></th>";
                                         } else {
                                             echo "<th><span class='success'>Chấp nhận đơn hàng</span></th>";
+                                            echo "<th><span class='global-color'>Đơn hàng không thể hủy</span></th>";
                                         }
-                                        echo "<th><a href=../.././src/process-delete-order.php?id=".$row["order_id"]." class='btn btn-danger'>Hủy đơn hàng</a></th>";
                                     echo "</tr>";
                                 }
                             } else {
