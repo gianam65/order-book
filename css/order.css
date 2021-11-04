@@ -47,6 +47,14 @@
     width: 75%;
 }
 
+.admin-order {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
 .order-box img {
     width: 80px;
     height: 80px;

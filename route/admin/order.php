@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Chi tiết đơn hàng</title>
-    <link rel="stylesheet" href="../.././css/order-detail.css">
+    <title>Quản lý đơn hàng</title>
+    <link rel="stylesheet" href="../.././css/order.css">
     <link rel="stylesheet" href="../.././css/style.css">
   </head>
   <body>
@@ -16,19 +16,27 @@
             </button>
 
             <div class="collapse navbar-collapse home-menu" id="navbarTogglerDemo01">
-                <a class="navbar-brand home-link" href="../.././index.php">TRANG CHỦ</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link home-link" href="../.././src/process-logout-admin.php">ĐĂNG XUẤT</a>
+                    </li>
+                </ul>
 
-                <form class="form-inline my-2 my-lg-0 search-section" action=".././global/search-result.php" method="POST">
-                    <input class="form-control mr-sm-2" name="search-value" id="search-value" type="search" placeholder="Nhập tên sách" aria-label="search">
-                    <button class="btn my-2 my-sm-0 search-btn" id="search-feature" type="submit">
-                        TÌM KIẾM
-                    </button>
-                </form>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link home-link" href="./index.php">Quản lý người dùng</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link home-link" href="./order.php">Quản lý đơn hàng</a>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </nav>
     <div class="container">
-        <h3 class="global-title">Chi tiết đơn hàng</h3>
+        <h3 class="global-title">Quản lý đơn hàng</h3>
         <div class="book-container">
             <table class="table table-info list-book">
                 
@@ -41,7 +49,7 @@
                             if(!$conn) {
                                 die("Không thể kết nối");
                             }
-                            $sql = "SELECT order_id, order_user_name, order_user_location, order_user_phone, order_total, order_status FROM tb_order WHERE user_id = $userID";
+                            $sql = "SELECT order_id, order_user_name, order_user_location, order_user_phone, order_total, order_status FROM tb_order";
                             $result = mysqli_query($conn,$sql);
                             
                             if(mysqli_num_rows($result) > 0){
@@ -53,8 +61,8 @@
                                         <th scope="col">Tổng thanh toán</th>
                                         <th scope="col">Địa chỉ nhận hàng</th>
                                         <th scope="col">Số điện thoại </th>
-                                        <th scope="col">Trạng thái đơn</th>
-                                        <th scope="col">Hành động</th>
+                                        <th scope="col">Hành động 1</th>
+                                        <th scope="col">Hành động 2</th>
                                     </tr>
                                 </thead>
                                 ';
@@ -62,22 +70,26 @@
                                     echo "<tr>";
                                         echo "<th>MĐH0".$row["order_id"]."</th>";
                                         echo "<th>".$row["order_user_name"]."</th>";
-                                        echo "<th>".$row["order_total"]."</th>";
+                                        echo "<th>".number_format($row["order_total"])." VNĐ</th>";
                                         echo "<th>".$row["order_user_location"]."</th>";
                                         echo "<th>".$row["order_user_phone"]."</th>";
                                         if($row["order_status"] == 0) {
-                                            echo "<th><span class='btn'>Chờ xác nhận</span></th>";
+                                            echo "<th><a href=../.././src/process-update-order.php?updateId=".$row["order_id"]." class='btn btn-success'>Chấp nhận đơn hàng</a></th>";
                                         } else {
-                                            echo "<th><span class='success'>Chấp nhận đơn hàng</span></th>";
+                                            echo "<th><span class='btn'>Đơn hàng được chấp nhận</span></th>";
                                         }
-                                        echo "<th><a href=../.././src/process-delete-order.php?id=".$row["order_id"]." class='btn btn-danger'>Hủy đơn hàng</a></th>";
+                                        if($row["order_status"] == 1) {
+                                            echo "<th><a href=../.././src/process-admin-delete-order.php?deleteId=".$row["order_id"]." class='btn btn-danger'>Từ chối đơn hàng</a></th>";
+                                        } else {
+                                            echo "<th><span class='btn'>Đơn hàng bị từ chối</span></th>";
+                                        }
                                     echo "</tr>";
                                 }
                             } else {
                                 echo '
                                     <div class="order-empty">
-                                        <h3 class="text-center global-color">Bạn chưa có đơn hàng nào</h3>
-                                        <img src="../.././src/images/empty-cart.png" />
+                                        <h3 class="text-center global-color">Hiện tại trang web chưa có đơn hàng nào</h3>
+                                        <img src="../.././src/images/empty-cart.png" class="admin-order" />
                                     </div>
                                 ';
                             }

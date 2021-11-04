@@ -34,6 +34,9 @@
                                     <li class="nav-item">
                                         <a class="nav-link home-link" href="../../src/process-logout.php">Đăng xuất</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link home-link" href="./order-detail.php">Chi tiết đơn hàng</a>
+                                    </li>
                                 ';
                             }
                         ?>
