@@ -142,6 +142,11 @@ body {
     text-decoration: none;
     color: #6c5ce7;
 }
+@media (max-width: 768px) {
+    .login-register-text {
+        font-size: 12px;
+    }
+}
 
 @media (max-width: 430px) {
     .container {
@@ -152,5 +157,8 @@ body {
     }
     .container .login-social a {
         display: block;
+    }
+    .login-register-text {
+        font-size: 12px;
     }
 }
