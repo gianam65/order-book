@@ -19,7 +19,7 @@
         echo '<script>alert("Tên đăng nhập đã tồn tại")</script>';
         echo "<script>window.location = '.././route/global/register.php'</script>";
     } else {
-        $pass_hash = password_hash($pass1, PASSWORD_DEFAULT);
+        $pass_hash = password_hash($pass1, PASSWORD_DEFAULT); 
         $sql2 = "INSERT INTO tb_users(user_name, user_email, user_pass, user_phone) VALUES ('$user', '$user_email','$pass_hash', '$phone')";
         if (empty($user) || empty($pass1) || empty($pass2) || empty($phone) || empty($user_email)) {
             $sql2 = "INSERT INTO tb_usersss(user_name, user_email, user_pass, user_phone) VALUES ('$user', '$user_email','$pass_hash', '$phone')";
@@ -29,7 +29,7 @@
 		}
         $result2 = mysqli_query($conn, $sql2);
         if($result2 == true) {
-            header("Location: .././index.php");
+            header("Location: .././route/global/login.php");
         } else {
             header("Location: .././error.php");
         }
