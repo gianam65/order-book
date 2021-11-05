@@ -22,19 +22,12 @@
             </button>
 
             <div class="collapse navbar-collapse home-menu" id="navbarTogglerDemo01">
-                <a class="navbar-brand home-link" href="../.././index.php">TRANG CHỦ</a>
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
                         <a class="nav-link home-link" href="../.././src/process-logout-manager.php">ĐĂNG XUẤT</a>
                     </li>
                 </ul>
 
-                <form class="form-inline my-2 my-lg-0 search-section" action=".././global/search-result.php" method="POST">
-                    <input class="form-control mr-sm-2" name="search-value" id="search-value" type="search" placeholder="Nhập tên sách" aria-label="search">
-                    <button class="btn my-2 my-sm-0 search-btn" id="search-feature" type="submit">
-                        TÌM KIẾM
-                    </button>
-                </form>
             </div>
         </div>
     </nav>
