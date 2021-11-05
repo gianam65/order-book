@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="./css/error.css">
+<title>Error Page</title>
 <h1>404 Error Page</h1>
     <p class="zoom-area"><b>Thông tin bạn cần tìm không tồn tại</b></p>
 <section class="error-container">
