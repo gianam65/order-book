@@ -18,7 +18,7 @@
     }
 
     $conn = mysqli_connect('localhost','root','','database_book'); 
-    $sql = "UPDATE tb_books SET book_name = '$book_name', book_status = $book_status ,book_author = '$book_author', book_desc = '$book_desc', book_image = '$pname' WHERE book_id = $book_id";
+    $sql = "UPDATE tb_books SET book_price = '$book_price',book_name = '$book_name', book_status = $book_status ,book_author = '$book_author', book_desc = '$book_desc', book_image = '$pname' WHERE book_id = $book_id";
     $result = mysqli_query($conn,$sql);
     if(empty($book_name) || empty($book_author) || empty($book_status) || empty($book_desc) || empty($book_image) || empty($book_price)) {
         echo '<script>alert("Bạn phải điền tất cả thông tin vào")</script>';
